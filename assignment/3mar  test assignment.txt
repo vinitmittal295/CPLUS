@@ -1,0 +1,25 @@
+write a program to break the number with all factorial with sum
+
+#include <iostream>
+
+using namespace std;
+int main(){
+    int n=789;
+    int rem;
+    int sum;
+    
+    //int fact=1;
+    while(n>0){
+        rem=n%10;
+        int fact=1;
+        for(int i=1; i<=rem; i++){
+            fact=fact*i;
+            
+        }
+        sum=sum+fact;
+        n=n/10;
+    }
+    cout<<sum;
+    return 0;
+    
+}

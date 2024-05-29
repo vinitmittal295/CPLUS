@@ -1,0 +1,172 @@
+1. **Even or Odd:**
+Write a C++ program that takes an integer as input and uses an `if-else` statement to determine
+whether the number is even or odd.
+
+2. **Grade Calculator:**
+Create a program that takes a student's percentage as input and outputs their corresponding grade
+(A, B, C, etc.) using `if-else` statements.
+
+3. **Leap Year Checker:**
+Write a program that checks if a given year is a leap year or not. Use an `if-else` statement and
+logical operators to make the determination.
+
+4. **Triangle Type:**
+Develop a program that takes three angles as input and determines whether the triangle is acute,
+obtuse, or right-angled using `if-else` statements.
+
+5. **Positive, Negative, or Zero:**
+Create a C++ program that takes an integer as input and prints whether it is positive, negative, or
+zero using `if-else` statements.
+
+6. **Login System:**
+Implement a basic login system where the user enters a username and password. Use `if-else`
+statements to validate the login credentials.
+
+7. **Traffic Light Simulation:**
+Write a program that simulates a traffic light. The program should take user input for the current
+signal and output the next signal using `if-else` statements.
+
+8. **Divisibility Checker:**
+Create a program that checks if a given number is divisible by both 5 and 7. Use logical operators
+within an `if` statement for the check.
+
+9. **Temperature Converter:**
+
+Develop a program that converts temperatures between Celsius and Fahrenheit. Use `if-else`
+statements to handle the conversion based on user input.
+
+10. **Largest of Three Numbers:**
+Write a C++ program that takes three numbers as input and outputs the largest one using `if-else`
+statements and relational operators.
+
+11. **Vowel or Consonant:**
+Create a program that takes a character as input and determines whether it is a vowel or
+consonant using `if-else` statements.
+
+12. **Age Classifier:**
+Write a program that classifies a person into different age groups (child, teenager, adult, senior)
+based on their age using `if-else` statements.
+
+13. **Quadratic Equation Solver:**
+Write a program that takes coefficients of a quadratic equation as input and outputs the roots (real
+or imaginary) using `if-else` statements and the quadratic formula.
+
+14. **Palindrome Checker:**
+Develop a program that checks if a given string is a palindrome (reads the same backward as
+forward). Use `if-else` statements for the check.
+
+15. **BMI Calculator:**
+Create a program that calculates the Body Mass Index (BMI) based on user input for height and
+weight. Classify the BMI into different categories (underweight, normal, overweight) using `if-else`
+statements.
+
+16. **Currency Converter:**
+Write a program that converts currency from one unit to another. Use `if-else` statements to
+determine the conversion based on the selected currency pair.
+
+17. **Password Strength Checker:**
+
+Implement a program that evaluates the strength of a password based on certain criteria (length,
+presence of uppercase letters, numbers, etc.) using `if-else` statements.
+
+18. **Day of the Week:**
+Create a program that takes a number representing a day of the week (1 for Sunday, 2 for Monday,
+etc.) and prints the corresponding day using `if-else` statements.
+
+19. **Ticket Price Calculator:**
+Write a program that calculates the ticket price for a movie based on age and time of day. Apply
+discounts for children and seniors using `if-else` statements.
+
+20. **Character Classification:**
+Develop a program that classifies a given character into categories such as uppercase letter,
+lowercase letter, digit, or special character using `if-else` statements.
+
+21. **Electricity Bill Calculator:**
+Create a program that calculates the electricity bill based on the units consumed. Apply different
+rates for different consumption ranges using `if-else` statements.
+
+22. **Game of Rock, Paper, Scissors:**
+Write a simple rock-paper-scissors game where the user plays against the computer. Use `if-else`
+statements to determine the winner.
+
+23. **Bookstore Discount Calculator:**
+Implement a program that calculates the total cost of books after applying discounts based on the
+quantity purchased. Use `if-else` statements to determine the discount rate.
+Purchased above Rs 10000 then discount 5%
+Purchased above Rs 20000 then discount 10%
+Purchased above Rs 30000 then discount 15%
+
+24. **Sorting Three Numbers:**
+
+Write a program that takes three numbers as input and prints them in ascending order using `if-
+else` statements and relational operators.
+
+25. **Income Tax:**
+Implement a program that calculates the total tax after applying discounts based on the income.
+Use `if-else` statements to determine the discount rate.
+Salary below Rs 100000 then discount 15%
+Salary below Rs 200000 then discount 10%
+Salary below Rs 30000 then discount 25%
+
+26. Simple Alarm Clock:
+Write a program that takes the current time as input and prints a message based on whether it's
+morning, afternoon, evening, or night.
+
+27. Positive or Negative:
+Write a program that takes an integer as input and prints whether it is a positive or negative number.
+
+28. Power of Two Checker:
+Write a program that checks if a given number is a power of two. Use if-else statements and bitwise
+operators for the check.
+
+29.Age Group Identifier:
+Write a program that takes the age of a person as input. Use logical operators to categorize them into
+"Child" (0-12), "Teenager" (13-19), "Adult" (20-59), and "Senior" (60 and above).
+
+30.Grade Validator:
+Create a program that takes a student's score as input. Use logical operators to check if the score is
+valid (between 0 and 100) and output whether the student passed (score >= 50) or failed.
+
+31.Triangle Validator:
+Write a program that takes three integer inputs representing the sides of a triangle. Use logical
+operators to determine if the triangle is valid (the sum of any two sides is greater than the third).
+
+32. Divisibility Tester:
+Develop a program that takes an integer as input and checks if it is divisible by both 3 and 5 using
+logical operators.
+
+33.Login System with Multiple Conditions:
+Implement a basic login system. Ask the user to enter both a username and a password. Use logical
+operators to check if the username is "admin" and the password is "admin@123".
+
+34. Book Discount Calculator:
+Develop a program that calculates the total cost of books based on the quantity. Apply a discount of
+10% if the quantity is between 5 and 10, and 20% if the quantity is more than 10.
+
+35. Ticket Price Determiner:
+Write a program that determines the price of a movie ticket based on the age of the person. Apply
+different rules for children(0-5), adults(5-12), and seniors(18-above).
+
+36. Product Availability Checker:
+Develop a program that checks the availability of a product in a store. If the product is in
+stock(greater than 1) and the user has a valid membership, they can purchase it; otherwise, display
+an "Out of stock" message.
+
+37. Credit Score Evaluator:
+Write a program that evaluates a person's credit score and categorizes it as "Excellent," "Good,"
+"Fair," or "Poor" using if-else statements.
+Credit score >1,00,000 Good
+Credit score>50,000 Fair
+Credit score>10,000 Poor
+
+38. Simple ATM System:
+Create a basic ATM system where the user can withdraw money. Use if-else statements to check the
+account balance and handle withdrawal limits.
+
+39. Student Eligibility Checker:
+Implement a program that checks if a student is eligible for a scholarship based on their grades. Use
+if-else statements to determine eligibility criteria.
+
+40. Day Type Identifier:
+Implement a program that takes a day of the week (Monday, Tuesday, etc.) as input and prints
+whether it's a weekday or a weekend day using if-else statements.

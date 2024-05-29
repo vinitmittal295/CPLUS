@@ -1,0 +1,318 @@
+	1. Write a recursive function to print numbers from 1 to 15.
+
+#include <iostream>
+
+using namespace std;
+void repetition(int i){
+    if(i<1)
+    return;
+    
+    repetition(i-1);
+    cout<<i<<" "<<"\n";
+}
+
+int main()
+{
+    int i=15;
+    repetition(i);
+
+    return 0;
+}
+
+2. Create a recursive function that counts down from 15 to 1 and prints each number.
+
+#include <iostream>
+
+using namespace std;
+void repetition(int i){
+    if(i<1)
+    return;
+    cout<<i<<" "<<"\n";
+    repetition(i-1);
+}
+
+int main()
+{
+    int i=15;
+    repetition(i);
+
+    return 0;
+}
+
+3. Write a recursive function to print even numbers from 2 to 22.
+
+#include <iostream>
+
+using namespace std;
+void repetition(int i){
+    if(i<2)
+    return;
+    
+    repetition(i-2);
+    cout<<i<<" "<<"\n";
+}
+
+int main()
+{
+    int i=22;
+    repetition(i);
+
+    return 0;
+}
+
+4. Create a recursive function to print the first 6 multiples of 4.
+
+#include <iostream>
+
+using namespace std;
+void repetition(int i){
+    if(i<24)
+    return;
+    repetition(i-4);
+    cout<<i<<" ";
+}
+
+int main()
+{
+    int i=24;
+    repetition(i);
+
+    return 0;
+}
+
+5. Write a recursive function to calculate the sum of numbers from 1 to 15.
+
+	
+6. Create a recursive function that prints the square of numbers from 1 to 6.
+#include <iostream>
+using namespace std;
+void sum(int num){
+    if(num<0)
+    return ;
+    sum(num-1);
+    cout<<num*num<<" ";
+}
+int main(){
+    int num;
+    cout<<"enter any number";
+    cin>>num;
+    sum(num);
+}
+
+7. Create a recursive function that prints factorial of 6.
+
+#include <iostream>
+using namespace std;
+int sum(int num){
+    if(num<=0)
+    return 1;
+    return sum(num-1)*num;
+}
+int main(){
+    int num;
+    cout<<"enter any number";
+    cin>>num;
+    int s=sum(num);
+    cout<<s;
+}
+
+8. Create a recursive function that prints the cube of numbers from 1 to 7.
+
+#include <iostream>
+using namespace std;
+int cubeRec(int n,int i)
+{
+    if(n<=0)
+        return 1;
+    return cubeRec(n-1,i)*i;
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter the value of n:\n";
+    cin>>n;
+    int i=3;
+    int ans1 = cubeRec(n,i);
+    cout<<ans1;
+}
+9. Create a recursive function that prints the square of numbers from 1 to 12.
+
+#include <iostream>
+using namespace std;
+void square(int n){
+    if(n<=0)
+    return;
+    square(n-1);
+    cout<<n*n<<" ";
+}
+int main(){
+    int n;
+    cout<<"enter any num";
+    cin>>n;
+    square(n);
+    
+}
+10. Write a recursive function to print numbers from 1 to 25 in reverse order.
+#include <iostream>
+using namespace std;
+void reverse(int n){
+    if(n<0)
+    return;
+    reverse(n-1);
+    cout<<n<<" ";
+}
+int main(){
+    int n;
+    cout<<"enter any num";
+    cin>>n;
+    reverse(n);
+    
+}
+11. Create a recursive function that counts down from 25 to 1 and prints each number in reverse
+order.
+#include <iostream>
+using namespace std;
+void reverse(int n){
+    if(n<0)
+    return;
+    cout<<n<<" ";
+    reverse(n-1);
+    
+}
+int main(){
+    int n;
+    cout<<"enter any num";
+    cin>>n;
+    reverse(n);
+    
+}
+12. Write a recursive function to print odd numbers from 1 to 27.
+#include <iostream>
+using namespace std;
+void reverse(int n){
+    if(n<0)
+    return;
+    cout<<n<<" ";
+    reverse(n-2);
+    
+}
+int main(){
+    int n;
+    cout<<"enter any num";
+    cin>>n;
+    reverse(n);
+    
+}
+13. Create a recursive function to print the first 7 multiples of 5.
+#include <iostream>
+using namespace std;
+void reverse(int n,int i){
+    if(n<0)
+    return;
+    
+    reverse(n-1,7);
+    cout<<n*i<<" ";
+    
+}
+int main(){
+    int n;
+    cout<<"enter any num";
+    cin>>n;
+    reverse(n,7);
+}
+14. Write a recursive function to calculate the sum of numbers from 1 to 20.
+#include <iostream>
+using namespace std;
+int reverse(int n){
+    if(n<=0)
+    return 0;
+    
+    return reverse(n-1)+n;
+    
+}
+int main(){
+    int n;
+    cout<<"enter any num";
+    cin>>n;
+    int s=reverse(n);
+    cout<<s;
+}
+15. Create a recursive function that prints the square of numbers from 1 to 8.
+#include <iostream>
+using namespace std;
+void reverse(int n){
+    if(n<0)
+    return ;
+    
+     reverse(n-1);
+     cout<<n*n<<" ";
+    
+}
+int main(){
+    int n;
+    cout<<"enter any num";
+    cin>>n;
+    reverse(n);
+}
+16. Create a recursive function that prints factorial of 8.
+
+#include <iostream>
+using namespace std;
+int fact(int n){
+    if(n<=0)
+    return 1;
+    
+    return fact(n-1)*n;
+    
+}
+int main(){
+    int n;
+    cout<<"enter any num";
+    cin>>n;
+    int s=fact(n);
+    cout<<s;
+}
+17. Create a recursive function that prints the cube of numbers from 1 to 9.
+
+#include <iostream>
+using namespace std;
+int cubeRec(int n,int i)
+{
+    if(n<=0)
+        return 1;
+    return cubeRec(n-1,i)*i;
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter the value of n:\n";
+    cin>>n;
+    int i=3;
+    int ans1 = cubeRec(n,i);
+    cout<<ans1;
+}
+
+
+Q18 finnacci with recursion
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int fib(int x){
+    if(x==0 || x==1){
+        return x;
+    }
+   
+    return fib(x-1)+fib(x-2);
+    
+}
+
+int main(){
+    int x=10;
+    int ans=fib(x);
+    cout<<ans;
+}
+
+

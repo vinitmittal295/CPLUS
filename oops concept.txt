@@ -1,0 +1,546 @@
+1)how to make class using linkedlist by using insert function
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class LinkedList
+{
+    int data;
+    char b;
+ public:
+    void insert(int data, char b)
+    {
+        this->data = data;
+        this->b = b;
+    }
+   
+    void display()
+    {
+       cout<<data<<"\n";
+       cout<<b;
+    }
+   
+};
+
+int main()
+{
+    LinkedList j;
+    j.insert(5,'j');
+    j.display();
+   
+}
+
+2) making class with linkedlist not using insert function
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class LinkedList
+{
+    int data;
+    char b;
+ public:
+    LinkedList()
+    {
+        data=0;
+        b='n';
+    }
+     LinkedList(int data,char b)
+    {
+        this->data = data;
+        this->b=b;
+    }
+    void insert(int data, char b)
+    {
+        this->data = data;
+        this->b = b;
+    }
+   
+    void display()
+    {
+       cout<<data<<"\n";
+       cout<<b;
+    }
+   
+};
+
+int main()
+{
+    LinkedList j(6,'o');//data garbage
+     j.display();
+    // j.insert(5,'j');
+    // j.display();
+   
+}
+
+
+3)  making a class by using linkedlist by direct function with default constructor and paramatric constructor
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class LinkedList
+{
+    int data;
+    char b;
+ public:
+    LinkedList()
+    {
+        data=0;
+        b='n';
+    }
+     LinkedList(int data,char b)
+    {
+        this->data = data;
+        this->b=b;
+    }
+    void insert(int data, char b)
+    {
+        this->data = data;
+        this->b = b;
+    }
+   
+    void display()
+    {
+       cout<<data<<"\n";
+       cout<<b;
+    }
+   
+};
+
+int main()
+{
+    LinkedList j(6,'o');//data garbage
+     j.display();
+    // j.insert(5,'j');
+    // j.display();
+   
+}
+
+we can use without void insert function
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Car
+{
+    int id;
+    string name;
+ public:
+    Car()
+    {
+        int id=0;
+        string name="NULL";
+    }
+     Car(int id,string name)
+    {
+        this->id = id;
+        this->name=name;
+    }
+    // void insert(int id, string name)
+    // {
+    //     this->id = id;
+    //     this->name = name;
+    // }
+   
+    void display()
+    {
+       cout<<id<<"\n";
+       cout<<name;
+    }
+   
+};
+
+int main()
+{
+    Car j(6,"vint");//data garbage
+     j.display();
+    // j.insert(5,'j');
+    // j.display();
+   
+}
+----------------------------------------------------------------------------------------------
+// Object Oriented Programming language
+//model database
+//primitive datatype
+//int float double -->dataStructure (one time one value)
+//array similar data ka group is called as array or collection
+//int a[10] float b[10]
+
+//inbuilt function
+//math.h -> tan sec sqrt pow
+	
+//user defined functions --->algorithms
+//search , filteration, sort,
+//5*5*5
+
+//user defined data structure
+
+//structure union class
+
+//in structure we will hold more than 1 primitive dataStructure
+
+#include<bits/stdc++.h>
+using namespace std;
+
+//blueprint schema desigining architurture model
+
+struct student
+{
+    int id;
+    string name;
+    string address;
+    string parentName;
+    long int phonenumber;
+   
+};
+
+int main()
+{
+ 
+    student s1;
+    cout<<"Enter the student name:\n";
+    cin>>s1.name;
+    cout<<"Enter the student id:\n";
+    cin>>s1.id;
+    cout<<"Enter the student phonenumber:\n";
+    cin>>s1.phonenumber;
+    cout<<"Enter the student parentName:\n";
+    cin>>s1.parentName;
+    cout<<"Enter the student address:\n";
+    cin>>s1.address;
+    cout<<"Student Id:"<<s1.id<<"\n";
+    cout<<"Student Name:"<<s1.name<<"\n";
+    cout<<"Student parentName:"<<s1.parentName<<"\n";
+    cout<<"Student address:"<<s1.address<<"\n";
+    cout<<"Student phonenumber:"<<s1.phonenumber<<"\n";
+   
+   
+   
+   
+}
+
+4)                                    struct model
+ 
+ this is the way to make to make struct model
+
+#include<bits/stdc++.h>
+using namespace std;
+
+struct Product
+{
+    int Pid;
+    string ProductName;
+    string ProductDesc;
+    float ProductPrice;
+    int quantity;
+};
+
+int main()
+{
+    Product P1;
+    P1.Pid= 1;
+    P1.ProductName = "Lux";
+    P1.ProductDesc = "A fragnance soap";
+    P1.ProductPrice = 17.87;
+    P1.quantity = 3;
+   
+    //Display the details of product p1
+    cout<<"Product id: "<<P1.Pid<<"\n";
+    cout<<"Product Name: "<<P1.ProductName<<"\n";
+    cout<<"Product Descrption: "<<P1.ProductDesc<<"\n";
+    cout<<"Product Price: "<<P1.ProductPrice<<"\n";
+    cout<<"Product quantity: "<<P1.quantity<<"\n";
+}
+
+5) making the model by using call by value means (&) operator
+#include<bits/stdc++.h>
+using namespace std;
+
+struct Product
+{
+    int Pid; //---> 4
+    string ProductName; //--->n =3   32
+    string ProductDesc; //--->n =16  32
+    float ProductPrice; //--->4
+    int quantity; //--->4
+    float oldPrice;
+    float newPrice;
+};
+
+void getterMethod(Product *P1)
+{
+    P1->Pid= 1;
+    P1->ProductName = "Lux";
+    P1->ProductDesc = "A fragnance soap";
+    P1->ProductPrice = 17.87;
+    P1->quantity = 3;
+}
+
+int main()
+{
+    Product P1;
+    getterMethod(&P1);
+    //Display the details of product p1
+    cout<<"Product id: "<<P1.Pid<<"\n";
+    cout<<"Product Name: "<<P1.ProductName<<"\n";
+    cout<<"Product Descrption: "<<P1.ProductDesc<<"\n";
+    cout<<"Product Price: "<<P1.ProductPrice<<"\n";
+    cout<<"Product quantity: "<<P1.quantity<<"\n";
+   
+}
+
+6) jo argument hm function ke andr dal rhe the usko hm dot operator ka use krke access krengeSs
+variable/object ko dot operator use krke access krenge
+
+#include<bits/stdc++.h>
+using namespace std;
+
+struct Product
+{
+    int Pid; //---> 4
+    string ProductName = ""; //--->n =3   32
+    string ProductDesc = ""; //--->n =16  32
+    float ProductPrice; //--->4
+    int quantity; //--->4
+    float oldPrice;
+    float newPrice;
+   
+    void getterMethod()
+    {
+        Pid= 0;
+        ProductName = "NULL";
+        ProductDesc = "NULL";
+        ProductPrice = 0.0;
+        quantity = 0;
+    }
+   
+    void insertData()
+    {
+        cout<<"Enter Product id:\n";
+        cin>>Pid;
+        cout<<"Enter Product Desc:\n";
+        cin.ignore();
+        getline(cin,ProductDesc);
+        cout<<"Enter Product Name:\n";
+        cin>>ProductName;
+        cout<<"Enter Product Price:\n";
+        cin>>ProductPrice;
+        cout<<"Enter Product quantity:\n";
+        cin>>quantity;
+    }
+   
+    void printData()
+    {
+        cout<<"Product id:\n";
+        cout<<Pid<<"\n";
+        cout<<"Product Desc:\n";
+        cout<<ProductDesc<<"\n";
+        cout<<"Product Name:\n";
+        cout<<ProductName<<"\n";
+        cout<<"Product Price:\n";
+        cout<<ProductPrice<<"\n";
+        cout<<"Product quantity:\n";
+        cout<<quantity<<"\n";
+    }
+   
+};
+
+
+
+int main()
+{
+    Product P1;
+   
+    // Display the details of product p1
+    P1.printData();
+   
+    // Resetting data to default values
+    P1.getterMethod();
+   
+    // Display the details of product p1 after resetting
+    P1.printData();
+   
+    // Inserting new data
+    P1.insertData();
+   
+    // Display the details of product p1 after insertion
+    P1.printData();
+   
+    return 0;
+}
+
+7) #include<bits/stdc++.h>
+using namespace std;
+
+struct Product
+{
+    int Pid; //---> 4
+    string ProductName; //--->n =3   32
+    string ProductDesc; //--->n =16  32
+    float ProductPrice; //--->4
+    int quantity; //--->4
+    float oldPrice;
+    float newPrice;
+   
+    void getterMethod()
+    {
+        Pid= 0;
+        ProductName = "NULL";
+        ProductDesc = "NULL";
+        ProductPrice = 0.0;
+        quantity = 0;
+    }
+   
+    void insertData()
+    {
+        cout<<"Enter Product id:\n";
+        cin>>Pid;
+        cout<<"Enter Product Desc:\n";
+        cin.ignore();
+        getline(cin,ProductDesc);
+        cout<<"Enter Product Name:\n";
+        cin>>ProductName;
+        cout<<"Enter Product Price:\n";
+        cin>>ProductPrice;
+        cout<<"Enter Product quantity:\n";
+        cin>>quantity;
+    }
+   
+    void printData()
+    {
+        cout<<"Product id:\n";
+        cout<<Pid<<"\n";
+        cout<<"Product Desc:\n";
+        cout<<ProductDesc<<"\n";
+        cout<<"Product Name:\n";
+        cout<<ProductName<<"\n";
+        cout<<"Product Price:\n";
+        cout<<ProductPrice<<"\n";
+        cout<<"Product quantity:\n";
+        cout<<quantity<<"\n";
+    }
+   
+};
+
+
+
+
+
+int main()
+{
+    Product P1,P2;
+     //Display the details of product p1
+    // cout<<"Product id: "<<P1.Pid<<"\n";
+    // cout<<"Product Name: "<<P1.ProductName<<"\n";
+    // cout<<"Product Descrption: "<<P1.ProductDesc<<"\n";
+    // cout<<"Product Price: "<<P1.ProductPrice<<"\n";
+    // cout<<"Product quantity: "<<P1.quantity<<"\n";
+    P1.printData();
+    P1.getterMethod();
+    P2.getterMethod();
+     //Display the details of product p1
+    // cout<<"Product id: "<<P1.Pid<<"\n";
+    // cout<<"Product Name: "<<P1.ProductName<<"\n";
+    // cout<<"Product Descrption: "<<P1.ProductDesc<<"\n";
+    // cout<<"Product Price: "<<P1.ProductPrice<<"\n";
+    // cout<<"Product quantity: "<<P1.quantity<<"\n";
+    P1.printData();
+    P1.insertData();
+    //Display the details of product p1
+    // cout<<"Product id: "<<P1.Pid<<"\n";
+    // cout<<"Product Name: "<<P1.ProductName<<"\n";
+    // cout<<"Product Descrption: "<<P1.ProductDesc<<"\n";
+    // cout<<"Product Price: "<<P1.ProductPrice<<"\n";
+    // cout<<"Product quantity: "<<P1.quantity<<"\n";
+    P1.printData();
+   
+    // cout<<"Size of Product datatype: "<<sizeof(P1.Pid)<<"\n";
+    // cout<<"Size of Product datatype: "<<sizeof(P1.ProductName)<<"\n";
+    // cout<<"Size of Product datatype: "<<sizeof(P1.ProductDesc)<<"\n";
+    // cout<<"Size of Product datatype: "<<sizeof(P1.ProductPrice)<<"\n";
+    // cout<<"Size of Product datatype: "<<sizeof(P1.quantity)<<"\n";
+    // cout<<"Size of Product datatype: "<<sizeof(P1)<<"\n";
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+85299 4742
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+class Book{
+    string title;
+    string authorname;
+    string publication_year;
+    
+    
+    public:
+    
+    Book(){
+        string title="NULL";
+        string authorname="NULL";
+        string publication_year="NULL";
+        
+    }
+    Book(string title, string authorname,string publication_year){
+        this->title=title;
+        this->authorname=authorname;
+        this->publication_year=publication_year;
+    }
+    void display(){
+        cout<<"title: "<<title<<endl;
+        cout<<"authorname: "<<authorname<<endl;
+        cout<<"publication_year: "<<publication_year<<endl;
+        
+    }
+    
+};
+
+// library class
+
+
+class Library{
+    vector<Book>bookarr;
+    
+    public:
+    
+    void addbook(Book &b){
+        bookarr.push_back(b);
+        cout<<"book added successfully"<<endl;
+    }
+    
+    void displayallbooks(){
+        if(bookarr.empty()){
+            cout<<"library is empty";
+        }
+        else{
+            cout<<"books in the library are :";
+            int counter=0;
+            for(auto it:bookarr){
+                cout<<"Book no :"<<counter<<endl;
+                it.display();
+                counter++;
+                cout<<endl;
+            }
+        }
+    }
+    
+};
+
+int main(){
+    Book book1("premchand ", "premchand", "24_09_1990");
+    Book book2("the almighty", "premchand", "24_09_1980");
+    Book book3("premchand ", "premchand", "24_09_1991");
+    
+    Library library;
+    library.addbook(book1);
+    library.addbook(book2);
+    library.addbook(book3);
+    library.displayallbooks();
+    
+}

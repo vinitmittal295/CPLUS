@@ -1,0 +1,93 @@
+PPOINTER OBJECT WITH PARAMETERISED CONSTRUCTOR
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Car
+{
+    int id;
+    string name;
+    string brand;
+    string desc;
+    int mileage;
+    int price;
+ public:
+    Car()
+    {
+        int id=0;
+        string name="NULL";
+        string brand="NULL";
+        string desc="NULL";
+        int mileage=0;
+        int price=0;
+    }
+     Car(int id,string name,string brand,string desc ,int mileage ,int price)
+    {
+        this->id = id;
+        this->name=name;
+        this->brand=brand;
+        this->desc=desc;
+        this->mileage = mileage;
+        this->price = price;
+    }
+    void display()
+    {
+       cout<<id<<endl;
+       cout<<name<<endl;
+       cout<<brand<<endl;
+       cout<<desc<<endl;
+       cout<<mileage<<endl;
+       cout<<price<<endl;
+    }
+   
+};
+
+int main()
+{
+    Car obj1(2016,"i20", "hyundai","this is the best car", 20,3400);//data garbage
+     obj1.display();
+   
+
+2) POINTER OBJECT WITH DEFAULT CONSTRUCTOR
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class LinkedList
+{
+    int id;
+    string name;
+    string brand;
+    string desc;
+    int mileage;
+    int price;
+ public:
+    void insert(int id,string name,string brand,string desc ,int mileage ,int price)
+    {
+        this->id = id;
+        this->name=name;
+        this->brand=brand;
+        this->desc=desc;
+        this->mileage = mileage;
+        this->price = price;
+    }
+   
+    void display()
+    {
+       cout<<id<<endl;
+       cout<<name<<endl;
+       cout<<brand<<endl;
+       cout<<desc<<endl;
+       cout<<mileage<<endl;
+       cout<<price<<endl;
+    }
+   
+};
+
+int main()
+{
+    LinkedList j;
+    j.insert(2016,"i20", "hyundai","this is the best car", 20,3400);
+    j.display();
+}

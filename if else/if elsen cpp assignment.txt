@@ -1,0 +1,148 @@
+Scenario 1: Access Control
+You are developing a simple login system. Write a C++ program that prompts the user for a username
+and password. If both the username and password match predefined values, grant access.
+Otherwise, deny access.
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string a;
+    cout<<"enter useename";
+    cin>>a;
+    int b;
+    cout<<"enter password";
+    cin>>b;
+    if(a=="vinit"&& b==1234){
+        cout<<"you are in the system";
+    }
+
+    return 0;
+}
+
+
+Scenario 2: Membership Eligibility
+Create a program that checks if a user is eligible for a premium membership based on age and
+subscription status. If the user is at least 18 years old and has a valid subscription, provide access;
+otherwise, deny access.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num;
+    cout<<"enter your age";
+    cin>>num;
+    if(num>=18){
+        cout<<"access provide";
+    }else{
+        cout<<"access denied";
+    }
+    return 0;
+}
+
+Scenario 3: Grade Classification
+Design a program that takes a student's numerical grade as input and outputs their corresponding
+letter grade. Use if-else statements to categorize the grades as 'A', 'B', 'C', 'D', or 'F'.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num;
+    cout<<"enter your number";
+    cin>>num;
+    if(num>=90){
+        cout<<"A";
+    }else if(num>=80){
+        cout<<"B";
+    }else if(num>=70){
+        cout<<"c";
+    }else if(num>=60){
+        cout<<"d";
+    }else{
+        cout<<"e";
+    }
+    return 0;
+}
+
+Scenario 4: Shipping Charges
+Write a C++ program that calculates shipping charges based on the weight of a package. If the weight
+is less than or equal to 5 pounds, apply a flat rate; otherwise, charge an additional fee per pound for
+weights exceeding 5 pounds.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int weight;
+    cout<<"enter your weight";
+    cin>>weight;
+    if(weight>=5){
+        cout<<"apply a flat rate";
+    }else{
+        cout<<"charge an additional fee per pound";
+    }
+    return 0;
+}
+
+Scenario 5: Discount Calculation
+You are working for an e-commerce platform. Implement a program that calculates the total cost of
+an order after applying discounts. If the order amount is greater than $50 and the user is a premium
+member, provide a 10% discount; otherwise, provide a 5% discount.
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int amount,amnt,amnt1;
+    cout<<"enter your amount";
+    cin>>amount;
+    if(amount>=50){
+        amnt=50-(50)*10/100;
+        cout<<"you are a premium user and your amount is "<<amnt;
+    }else{
+        amnt1=50-(50)*5/100;
+        cout<<"your amount is "<<amnt1;
+    }
+    return 0;
+}
+
+Scenario 6: Ticket Pricing
+Develop a program that determines the price of a movie ticket based on the age of the user and the
+time of the movie. If the user is a child (age <= 12), provide a discount. If the movie is a matinee
+(before 5 PM), apply an additional discount.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int amount,amnt,amnt1,age;
+    string movie;
+    cout<<"enter your amount ";
+    cin>>amount;
+    cout<<"enter your age ";
+    cin>>age;
+    cout<<"enter your movie ";
+    cin>>movie;
+    
+    if(age>12 && movie=="matinee"){
+        amnt1=amount-(amount)*15/100;
+        cout<<"your amount is "<<amnt1;
+    }else if(age>12){
+        amnt=amount-(amount)*10/100;
+        cout<<"you are a premium user and your amount is "<<amnt;
+    }
+    return 0;
+}
+
+
+

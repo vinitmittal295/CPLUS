@@ -1,0 +1,332 @@
+1. Write a C++ program to declare a pointer variable and initialize it to point to a character variable.
+Print the value of the character variable using both the pointer and direct variable access.
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a;
+    int *p1;
+    p1=&a;
+    cout<<a<<"\n";
+    cout<<&a<<"\n";
+    cout<<p1<<"\n";
+    cout<<*p1<<"\n";
+    
+}
+2. Develop a C++ program that multiplies two values using pointer variable concept
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a=5;
+    int *p1;
+    p1=&a;
+    int b=7;
+    int *p2;
+    p2=&b;
+    int mul=*p1**p2;
+    cout<<mul;
+}
+3. Create a C++ function that takes two double pointers as parameters and swaps the values pointed
+to by these pointers. Then, write a main program to demonstrate the functionality of the swap
+function by swapping two double values.
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a=10;
+    int *p1;
+    p1=&a;
+    int b=20;
+    int *p2;
+    p2=&b;
+    cout<<*p1<<"\n";
+    cout<<*p2<<"\n";
+    *p1=*p1+*p2;
+    *p2=*p1-*p2;
+    *p1=*p1-*p2;
+    cout<<*p1<<"\n";
+    cout<<*p2<<"\n";
+}
+
+
+5. Design a C++ program that uses pointer arithmetic to compute the sum of elements in an integer.
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a=10;
+    int *p1;
+    p1=&a;
+    int b=20;
+    int *p2;
+    p2=&b;
+    int sum=*p1+*p2;
+    cout<<sum;
+}
+6. Develop a C++ function that accepts a pointer variable and perform cube.
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a=6;
+    int *p1;
+    p1=&a;
+    cout<<*p1**p1**p1;
+}
+
+8. Create a C++ program that utilizes pointer to calculate simple interest using function and pointers.
+#include <iostream>
+using namespace std;
+
+i#include <iostream>
+using namespace std;
+int sii(int *p1,int *p2,int *p3){
+    int si=(*p1**p2**p3)/100;
+    cout<<si;
+    return si;
+}
+
+int main(){
+    int n1;
+    cout<<"enter any amount";
+    cin>>n1;
+    int *p1;
+    p1=&n1;
+    int n2;
+    cout<<"enter any rate";
+    cin>>n2;
+    int *p2;
+    p2=&n2;
+    int n3;
+    cout<<"enter any time";
+    cin>>n3;
+    int *p3;
+    p3=&n3;
+    sii(&n1,&n2,&n3);
+}
+
+9. Develop a C++ function that accepts a pointer and perform reverse of number given by user.
+
+#include <iostream>
+using namespace std;
+int reverse(int *p1){
+    int sum=0;
+    while(*p1>0){
+        int rem=*p1%10;
+        sum=sum*10+rem;
+        *p1=*p1/10;
+    }
+    cout<<sum;
+    return sum;
+    //cout<<sum;
+    
+}
+int main(){
+    int n;
+    cout<<"enter any number";
+    cin>>n;
+    int *p1;    
+    p1=&n;
+    int sum=0;
+    int rem;
+    reverse(&n);
+    
+}
+
+
+                                                                             ORRR
+
+
+#include <iostream>
+using namespace std;
+int reverse(int *p1){
+    int sum=0;
+    while(*p1>0){
+        int rem=*p1%10;
+        sum=sum*10+rem;
+        *p1=*p1/10;
+    }
+    //cout<<sum;
+    return sum;
+    
+}
+int main(){
+    int n;
+    cout<<"enter any number";
+    cin>>n;
+    int *p1;    
+    p1=&n;
+    int sum=0;
+    int rem;
+    //reverse(&n);
+    int s1=reverse(&n);
+    cout<<s1;
+}
+
+10. Implement a C++ program to declare a pointer variable and pointer variable should get value
+from direct variable and perform multiple of 5 to it.
+#include <iostream>
+using namespace std;
+int mul(int *p1,int s){
+    int s;
+    for(int i=1; i<=10; i++){
+        int s=*p1*i;
+        cout<<s;
+    }
+    return s;
+}
+int main(){
+    int n;
+    cout<<"enter any number";
+    cin>>n;
+    int *p1;
+    p1=&n;
+    mul(&n);
+}
+
+11. Design a C++ function that takes a integer pointer as parameters and check whether the number
+is prime or not.
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter number";
+    cin>>n;
+    if(n>2){
+        //int rem=n/2;
+        for(int i=2; i<n; i++){
+            if(i%n==0){
+                cout<<"not 88prime";
+            }
+            else{
+                cout<<"prime number";
+            }
+        }
+        
+    }else if(n==2){
+        cout<<"prime77 number";
+    }
+}
+
+12. Write a C++ program to declare a pointer variable and pointer variable should get value from
+direct variable and perform multiple of 9 to it.
+
+#include <iostream>
+using namespace std;
+int mul(int *p1,int s){
+    int s;
+    for(int i=1; i<=10; i++){
+        int s=*p1*i;
+        cout<<s;
+    }
+    return s;
+}
+int main(){
+    int n;
+    cout<<"enter any number";
+    cin>>n;
+    int *p1;
+    p1=&n;
+    mul(&n);
+}
+13. Write a C++ program to declare a pointer variable and pointer variable should get value from
+direct variable and check whether the number is divisible of 5.
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter number";
+    cin>>n;
+    int *p1;
+    p1=&n;
+    if(*p1%5==0){
+        cout<<"this numnber is divisible by 5";
+    }else{
+        cout<<"this is not";
+    }
+}
+
+
+14. Write a C++ program to declare a pointer variable and pointer variable should get value from
+direct variable and check whether the number is divisible of 15.
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter number";
+    cin>>n;
+    int *p1;
+    p1=&n;
+    if(*p1%15==0){
+        cout<<"this numnber is divisible by 15";
+    }else{
+        cout<<"this is not";
+    }
+}
+
+
+16. Design a C++ program that uses pointer variable to count the number of digits in the value
+entered by user.
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter number";
+    cin>>n;
+    int *p1;
+    p1=&n;
+    int count=0;
+    while(*p1>0){
+        *p1=*p1/10;
+        count++;
+        
+    }
+    cout<<count;
+}
+19. Develop a C++ program and calculate area of triangle using pointer variables
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+    int a=10;
+    int *p1;
+    p1=&a;
+    int b=20;
+    int *p2;
+    p2=&b;
+    int c=(*p1**p2)/2;
+    cout<<c;
+    
+}
+20. Implement a C++ function that takes two integer pointers as parameters and calculates the area
+of rectangle using pointer variables.
+
+#include <iostream>
+using namespace std;
+int area(int *p1,int *p2){
+    int c=(*p1**p2)/2;
+    return c;
+}
+
+int main()
+{
+    int a=10;
+    int *p1;
+    p1=&a;
+    int b=20;
+    int *p2;
+    p2=&b;
+    //area(&a,&b);
+    int s=area(&a,&b);
+    cout<<s;
+    
+}

@@ -1,0 +1,34 @@
+trainer:-
+(strival 
+love babbar
+codechamps)
+
+
+1)cover all array(bahut ache se)
+ insertion merge quick heap sort 
+fibbonnaci 
+n stairs 2
+
+2)map 
+hashmap hashset ordered ser unordered set
+
+3)2 d array 
+sprial matrix ,right triagle, rat maze problem , queen problem , rookie problem 
+
+4)classes object 
+linkedlist(singly)
+doubly linked list 
+circular linked list
+
+5) trees
+primary trees
+
+6) leetcode
+diagonal of tree
+height of treee
+count children
+
+
+bdy cke
+road cutting
+peak elements

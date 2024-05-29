@@ -1,0 +1,126 @@
+ 1.Create an array of size 100 bytes to store integers, with 4 bytes allocated for each integer.
+
+int arr[25];
+2. Design an array structure of 60 bytes where each element is a double.
+
+3. Implement an array of size 128 bytes, reserving 2 bytes for each short integer
+
+int arr[64];
+
+4. Develop a byte array of 90 bytes, allocating 6 bytes for each floating-point number.
+
+float arr[15];
+5.Design an array structure of 200 bytes, with 10 bytes reserved for each character
+
+char arr[20];
+
+6.Create an array of 80 bytes to hold 10 integers, ensuring each integer consumes 8 bytes.
+
+int arr[10];
+
+7. Develop an array structure of 120 bytes where each element is a long integer.
+
+long arr[15];
+
+8. Implement a byte array of size 150 bytes, with 5 bytes allocated for each boolean value.
+boolean arr[30];
+
+9. Design an array of 160 bytes to store 20 short integers, ensuring each integer consumes 4 bytes.
+
+int arr[40]={1,2,3,3,3,3,3,3,3...........}20 value store
+
+10. Create an array structure of 180 bytes, reserving 3 bytes for each double.
+
+double arr[60];
+
+11. Develop a byte array of 110 bytes to hold 22 characters, ensuring each character consumes 5 bytes.
+
+char arr[22];
+
+12. Develop a byte array of 110 bytes to hold 22 characters, ensuring each character consumes 5 bytes.
+
+int arr[12];
+
+13. Design an array structure of 176 bytes where each element is a float.
+
+float arr[22];
+
+14. Create a byte array of 98 bytes to store 14 boolean values, allocating 7 bytes for each boolean
+
+boolean arr[14];
+
+15.Develop an array of 148 bytes, ensuring 8 bytes are reserved for each long integer, with 16 bytes leftover.
+
+long arr[]
+
+---------------------------------------------------------------------------------------------------------------
+1. Create a data structure using an array of size 148 bytes to store integers, leaving 16 bytes for garbage storage.
+
+ int arr[37]={1,1,1,1,2,2,34,....}  33 value store
+
+2. Design a linear array structure with 148 bytes total size to hold integers, ensuring 16 bytes are reserved for garbage.
+
+ int arr[37]={1,1,1,1,2,2,34,....}  33 value store
+
+3. Implement an array-based data structure of 148 bytes for integers, leaving 16 bytes unutilized for garbage.
+
+int arr[37]={2,2,2,2}
+
+4. Implement an array-based data structure of 148 bytes for integers, leaving 16 bytes unutilized for garbage.
+
+int arr[37]={2,2,2,2}
+
+5. Create a data structure using an array of size 148 bytes to hold integers, leaving 16 bytes available for garbage storage.
+
+
+int arr[37]={1,1,1,1,2,2,34,....}  33 value store
+
+6.Design a linear array structure with 148 bytes total size to store integers, ensuring 16 bytes are left for garbage.
+
+
+int arr[37]={1,1,1,1,2,2,34,....}  33 value store
+
+7. Implement an array-based data structure of 148 bytes for integers, leaving 16 bytes free for garbage storage
+
+
+int arr[37]={1,1,1,1,2,2,34,....}  33 value store
+
+8. Develop a data structure with a linear array of 148 bytes to store integers, with 16 bytes reserved for garbage.
+
+
+int arr[37]={1,1,1,1,2,2,34,....}  33 value store
+
+9. Create a data structure using an array of size 148 bytes to store integers, leaving 16 bytes untouched for garbage storage.
+
+
+int arr[37]={2,2,2,2}
+
+10. Design a linear array structure with 148 bytes total size to hold integers, ensuring 16 bytes are available for garbage.
+
+
+int arr[37]={1,1,1,1,2,2,34,....}  33 value store
+
+11. Implement an array-based data structure of 148 bytes for integers, leaving 16 bytes unallocated for garbage storage.
+
+
+int arr[37]={2,2,2,2}
+
+12. Develop a data structure with a linear array of 148 bytes to store integers, with 16 bytes set aside for garbage.
+
+int arr[37]={1,1,1,1,2,2,34,....}  33 value store
+
+13. Create a data structure using an array of size 148 bytes to hold integers, leaving 16 bytes free for garbage storage.
+
+
+int arr[37]={1,1,1,1,2,2,34,....}  33 value store
+
+14. Design a linear array structure with 148 bytes total size to store integers, ensuring 16 bytes are preserved for garbage.
+
+
+
+int arr[37]={1,1,1,1,2,2,34,....}  33 value store
+
+15. Implement an array-based data structure of 148 bytes for integers, leaving 16 bytes vacant for garbage storage.
+
+
+int arr[37]={1,1,1,1,2,2,34,....}  33 value store

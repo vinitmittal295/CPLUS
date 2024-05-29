@@ -1,0 +1,106 @@
+1) C++ program to find the largest element of a given array of integers.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    vector<int>arr={1,2,3,4,5,6};
+    int max=INT_MIN;
+    for(int i=0; i<arr.size(); i++){
+        max=arr[i];
+    }
+    cout<<max;
+}
+
+2)  Write a C++ program to find the largest three elements in an array.
+#include <bits/stdc++.h> 
+using namespace std;
+void print3largest(int arr[], int arr_size) 
+{ 
+    int first, second, third;
+    if (arr_size < 3) 
+    { 
+        cout << " Invalid Input "; 
+        return; 
+    } 
+
+    third = first = second = INT_MIN; 
+    for(int i = 0; i < arr_size; i++) 
+    { 
+        
+        if (arr[i] > first)
+        { 
+            third = second; 
+            second = first; 
+            first = arr[i]; 
+        } 
+        else if (arr[i] > second)
+        { 
+            third = second; 
+            second = arr[i]; 
+        } 
+
+        else if (arr[i] > third) 
+            third = arr[i]; 
+    } 
+
+    cout<< first << " " << second << " "<< third << endl; 
+} 
+
+int main() 
+{ 
+    int arr[] = { 12, 13, 1, 10, 34, 11, 34 }; 
+    int n = sizeof(arr) / sizeof(arr[0]); 
+    
+    print3largest(arr, n); 
+    return 0; 
+} 
+
+3)  Write a C++ program to find the second largest element in an array of integers.
+
+
+#include <bits/stdc++.h>
+using namespace std; 
+  
+int main() 
+{ 
+    vector<int>array = {4,6,2,8,5,4 }; 
+    
+    int n = array.size();
+    
+    int first = INT_MIN, second = INT_MIN; 
+    for (int i = 0; i < n; i++) { 
+        if (array[i] > first) { 
+            second = first; 
+            first = array[i]; 
+        }
+    } 
+    cout << second << endl; 
+  
+    return 0; 
+}
+
+4) Write a C++ program to find the k largest elements in a given array of integers.
+
+5) Write a C++ program to find the second smallest elements in a given array of integers.
+
+#include <bits/stdc++.h>
+using namespace std; 
+  
+int main() 
+{ 
+    vector<int>array = {1,2,3,4,5}; 
+    
+    int n = array.size();
+    
+    int first = INT_MAX, second = INT_MAX; 
+    for (int i = 0; i < n; i++) { 
+        if (array[i] < first) { 
+            second = first; 
+            first = array[i]; 
+        }
+    } 
+    cout << second << endl; 
+    return 0; 
+}
+
