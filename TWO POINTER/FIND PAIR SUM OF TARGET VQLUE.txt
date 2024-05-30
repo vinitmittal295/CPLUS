@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+//[1,2,3,4,5,6,7,8]
+vector<int>twoSum(vector<int>&arr,int target)
+{
+    int i=0;
+    int j=arr.size()-1;
+    while(i<j)
+    {
+        int sum = arr[i]+arr[j];
+        if(sum==target)
+            return {arr[i],arr[j]};
+        else if(sum<target){
+            i++;
+        }
+        
+        else if(sum>target){
+            j--;
+        }
+    
+    }
+    return {};
+   
+}
+int main()
+{
+    vector<int>arr={1,2,3,4,5,6,7,8};
+    int target;
+   cout<<"Enter target value:\n";
+    cin>>target;
+    cout<<"original array:\n";
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+   vector<int>ans =  twoSum(arr,target);
+   if(ans.empty())
+   {
+       cout<<"No pairs found";
+   }
+   else
+   {
+       cout<<ans[0]<<" and "<< ans[1] <<" makes the target: "<<target;
+   }
+   
+}

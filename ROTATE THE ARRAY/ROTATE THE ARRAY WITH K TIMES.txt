@@ -1,0 +1,55 @@
+Q rotate the array with value k is equal is 2 times
+#include <bits/stdc++.h>
+using namespace std;
+void maxareacal(vector<int>&arr,int k){
+    k=k%arr.size();
+    for(auto it:arr){
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+    reverse(arr.begin(),arr.end());
+    for(auto it:arr){
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+    reverse(arr.begin(),arr.begin()+k);
+    for(auto it:arr){
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+    reverse(arr.begin()+k,arr.end());
+    for(auto it:arr){
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+    
+}
+int main(){
+    vector<int>arr={1,8,6,2};
+    int k=2;
+    maxareacal(arr,k);
+}
+
+
+
+
+     OR                                                             
+
+#include <bits/stdc++.h>
+using namespace std;
+void maxareacal(vector<int>&arr,int k){
+    k=k%arr.size();
+    reverse(arr.begin(),arr.end());
+    reverse(arr.begin(),arr.begin()+k);
+    reverse(arr.begin()+k,arr.end());
+    for(auto it:arr){
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+    
+}
+int main(){
+    vector<int>arr={1,8,6,2};
+    int k=2;
+    maxareacal(arr,k);
+}
