@@ -1,2 +1,6 @@
 diagonal difference 
 what is array constructor
+unique no of occurence
+find duplicate
+intersection of two array
+sort o and 1

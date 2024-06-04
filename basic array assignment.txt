@@ -1,0 +1,388 @@
+1) Write a C++ program to find the largest element of a given array of integers.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int>largest_element(vector<int>&arr)
+{
+   int max=arr[0],i;
+    for( i=1;i<arr.size();i++)
+    {
+       
+            if(arr[i]>max)
+            {
+               max=arr[i];
+            }
+        
+    } 
+    return {max};
+}
+int main()
+{
+    vector<int>arr={16,256,300,245,457,356,416};
+    vector<int>ans=largest_element(arr);
+    
+    for(auto it : ans)
+    {
+        cout<<it;
+    }
+    return 0;
+}
+
+2) Write a C++ program to find the largest three elements in an array.
+
+#include <bits/stdc++.h>
+using namespace std;
+vector<int>largestelement(vector<int>&arr)
+{
+   int first = INT_MIN, second = INT_MIN, third =INT_MIN;
+    for(int i=0;i<arr.size();i++)
+    {
+        if(arr[i]>first)
+        {
+            third=second;
+            second=first;
+            first=arr[i];
+        }
+        
+        else if(arr[i]>second)
+        {
+            third=second;
+            second=arr[i];
+        }
+        else if(arr[i]>third)
+        {
+            third=arr[i];
+        }
+        
+    } 
+    return {first,second,third};
+}
+int main()
+{
+    vector<int>arr={2,4,3,6,7,9,8};
+    vector<int>ans=largestelement(arr);
+    
+    for(auto it : ans)
+    {
+        cout<< it<<" ";
+    }
+    
+
+    return 0;
+}
+
+3) Write a C++ program to find the second largest element in an array of integers.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int>second_largest_element(vector<int>&arr)
+{
+   int first=INT_MIN, second=INT_MIN, i;
+    for( i=0;i<arr.size();i++)
+    {
+       
+            if(arr[i]>first)
+            {
+               second=first;
+               first=arr[i];
+            }
+        else if(arr[i]>second)
+        {
+            second=arr[i];
+        }
+    } 
+    return {second};
+}
+int main()
+{
+    vector<int>arr={16,256,300,245,457,356,416};
+    vector<int>ans=second_largest_element(arr);
+    
+    for(auto it : ans)
+    {
+        cout<<it;
+    }
+    return 0;
+}
+
+4) Write a C++ program to find the k largest elements in a given array of integers.
+
+
+
+5) Write a C++ program to find the second smallest elements in a given array of integers.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int>second_smallest_element(vector<int>&arr)
+{
+   int first=INT_MAX, second=INT_MAX, i;
+    for( i=0;i<arr.size();i++)
+    {
+       
+            if(arr[i]<first)
+            {
+               second=first;
+               first=arr[i];
+            }
+        else if(arr[i]<second)
+        {
+            second=arr[i];
+        }
+    } 
+    return {second};
+}
+int main()
+{
+    vector<int>arr={16,256,300,245,457,356,416};
+    vector<int>ans=second_smallest_element(arr);
+    
+    for(auto it : ans)
+    {
+        cout<<it;
+    }
+    return 0;
+}
+
+6) Write a C++ program to find all elements in an array of integers that have at least two significant elements.
+
+
+7) Write a C++ program to find the most frequent element in an array of integers.
+8) Write a C++ program to find the next more powerful element of every element of a given array of integers. Ignore those elements that have no greater element.
+9) Write a C++ program to sort a given unsorted array of integers, in wave form.S
+Note: An array is in wave form when array[0] >= array[1] <= array[2] >= array[3] <= array[4] >= . . . .
+10) Write a C++ program to find the smallest element missing from a sorted array.
+11) Write a C++ program to update every array element by multiplication of the next and previous values of a given array of integers.
+12) Write a C++ program to rearrange the elements of a given array of integers in a zig-zag pattern.
+Note: The format zig-zag array in form a < b > c < d > e < f.
+13) Write a C++ program to separate even and odd numbers in an array of integers. Put all even numbers first, and then odd numbers.
+14) Write a C++ program to separate 0s and 1s from a given array of values 0 and 1.
+15) Write a C++ program to rearrange a given sorted array of positive integers .
+Note: In final array, first element should be maximum value, second minimum value, third second maximum value , fourth second minimum value, fifth third maximum and so on.
+16) Write a C++ program to sort a given array of 0s, 1s and 2s. In the final array put all 0s first, then all 1s and all 2s last.
+17) Write a C++ program to sort (in descending order) an array of distinct elements according to the absolute difference of array elements and with a given value.
+18) Write a C++ program to move all negative elements of an array of integers to the end of the array. This is done without changing the order of the positive and negative elements of the array.
+19) Write a C++ program to find a number that occurs an odd number of times in a given array of positive integers. In the array, all numbers occur an even number of times.
+Click me to see the sample solution
+20) Write a C++ program to count the number of occurrences of a given number in a sorted array of integers.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int arr[]={1,1,1,1,2,2,3,3};
+    int x=3;
+    int count=0;
+    for(int i=0;i<8;i++)
+    {
+       if(arr[i]==x)
+       count++;
+    }
+    cout<<count;
+    return 0;
+}
+
+21) Write a C++ program to find the two repeating elements in a given array of integers.
+
+1st method from vector
+
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int>repeting_element(vector<int>&arr)
+{
+   for( int i=0; i<arr.size();i++)
+   {
+       for( int j=i+1; j<arr.size(); j++)
+       {
+           if(arr[i]==arr[j])
+           {
+             cout<< arr[i]<<" ";
+           }
+       }
+   }
+}
+int main()
+{
+    vector<int>arr={1,2,3,4,2,4,5,6,1};
+    repeting_element(arr);
+    
+    return 0;
+}
+
+2nd method from array
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int arr[]={1,2,3,2,4,3,4};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    for(int i=0;i<size;i++)
+    {
+        for(int j=i+1;j<size;j++)
+        {
+            if(arr[i]==arr[j])
+            {
+               cout<<arr[i]<<" ";
+            }
+        }
+    }
+        return 0;
+}
+
+2nd method from array in function
+
+#include <bits/stdc++.h>
+using namespace std;
+void repeting_element(int arr[])
+{
+int size=7;
+    for(int i=0;i<size;i++)
+    {
+        for(int j=i+1;j<size;j++)
+        {
+            if(arr[i]==arr[j])
+            {
+               cout<<arr[i]<<" ";
+            }
+        }
+    }
+}
+int main()
+{
+    int arr[]={1,2,3,2,4,3,4};
+    repeting_element(arr);
+        return 0;
+}
+
+
+22) Write a C++ program to find the missing element from two given arrays of integers except one element.
+23) Write a C++ program to find the element that appears once in an array of integers and every other element appears twice.
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<int>arr={1,2,2,1,1,4};
+    set<int>st;
+    
+    for(int i=0; i<arr.size(); i++){
+        int count=0;
+        for(int j=0; j<arr.size(); j++){
+            
+            if(arr[i]==arr[j]){
+                count++;
+                if(count>=2){
+                    st.insert(arr[i]);
+                }
+            }
+        }
+        if(count<=1){
+            cout<<arr[i]<<"\n ";
+        }
+    }
+    for(auto it:st){
+        cout<<it<<" ";
+    }
+
+    
+
+    return 0;
+}
+
+24) Write a C++ program to find the first repeating element in an array of integers.
+25) Write a C++ program to find and print all common elements in three sorted arrays of integers.
+26) Write a C++ program to find and print all distinct elements of a given array of integers.
+27) Write a C++ program to find the number of pairs of integers in a given array of integers whose sum is equal to a specified number.
+
+ #include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int arr[]={4,3,6,1,7};
+    int specified_number;
+    cout<<"enter the number:";
+    cin>>specified_number;
+    
+    int pairs=0;
+    for(int i=0;i<5;i++)
+    {
+      for(int j=i+1;j<5;j++)
+    {
+        if(arr[i]+arr[j]==specified_number)
+        {
+            pairs++;
+        }
+    }
+    }
+    cout<<pairs;
+    return 0;
+}
+
+28) Write a C++ program to arrange the numbers in a given array in a way that the sum of some numbers equals the largest number in the array.
+29) Write a C++ program to find the second lowest and highest numbers in a given array.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int>second_lowest(vector<int>&arr)
+{
+    int first=INT_MAX, second=INT_MAX, i;
+    for(i=0;i<arr.size();i++)
+    {
+        if(arr[i]<first)
+        {
+            second=first;
+            first=arr[i];
+        }
+        else if(arr[i]<second)
+        {
+            second=arr[i];
+        }
+    }
+    return {second};
+}
+
+vector<int>second_higest(vector<int>&arr)
+{
+    int first=INT_MIN, second=INT_MIN, i;
+    for(i=0;i<arr.size();i++)
+    {
+        if(arr[i]>first)
+        {
+            second=first;
+            first=arr[i];
+        }
+        else if(arr[i]>second)
+        {
+            second=arr[i];
+        }
+    }
+    return {second};
+}
+
+
+int main()
+{
+    vector<int>arr={1,2,3,9,4,8,7};
+    vector<int>ans = second_lowest(arr);
+    for(auto it : ans)
+    {
+        cout<<"second lowest element in an array is : " <<it<<"\n";
+    }
+    vector<int>ans2 = second_higest(arr);
+    for(auto it : ans2)
+    {
+        cout<<"second higest element in an array is : " <<it<<" ";
+    }
+        return 0;
+}
+
+30) Write a C++ program to find the third largest string in a given array of strings
+
