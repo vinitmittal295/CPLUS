@@ -1,0 +1,344 @@
+//variable jaha par aap ek data store kar sakte hai
+//object matlab hota hai jaha par aap ek se zada variable ko
+//ek satth store karte hai aur wo related hote
+//ek object ke liye variable classification hoti hai
+// Human class(group) praveen(object) = > eyes, nose, ears, lips
+
+//designing of object
+//class ka requirement hota hai
+//class ka matlab group ho gaya, sarein similar objects ka group ko class bolenge
+//Human=> prajjal, praveen ,ashutosh, shivam
+//prajjal ==> eyes, nose, ears, lips
+
+//User=> Class Prajjal ==>username, email, phonenumber
+//User class ke datamembers honge  username, email, phonenumber aur dusre language
+// mai key ya fir fields
+//User jise hum class bol rahe hai use hi dusre programming language mai Schema bola jata hai
+//datamembers ki jo value hogi use value bolte hai
+
+//object aur uski value ke bich mai jo relationship maintain ki jati hai uske liye dot(.) ka use karte hai
+//use membership operator bolte hai
+//prajjal.username prajjal.email prajjal.phonenumber
+
+//Object dominat kar raha hai isiliye is programming ko Object oriented programming language bola jata hai
+
+//ek object apne pass variable ke saath saath kuch functions bhi store kar sakta hai
+//prajjal ==> sleeping(body) walking(legs) drinking(mouth) seeing(eyes) ===>member function
+
+
+//User agar ek class hai
+// Prajjal uska ek obejec hai usme stored information jasie ki username, email, password are data members
+//Prajjal(object) agr login(username,email) karta hai then login is member function
+//Prajjal agr signup(username,email) karta hai then signup ek member function hoga
+
+//member function are responsible to make any changes in the data members.
+//matalb koi bahar wala username, email ko change nahi karna chahiye sirf aur sirf
+// uske member function hi usme change kar sakein
+
+//This concept is called as abstraction(data hiding).
+
+//object ke pass datamembers hai aur member function hai aur dono ek hi jagah hone chahiye is concept ka nam hoga encapsulation.
+//binding of datamembers and member function into a single entity is called as encapsulation.
+
+
+
+//designing of binding data members and memberfunction into single entity is possible through class.
+
+//class is a user defined data type that holds data members and member function
+
+//bahar se koi datamembers ki access na kar paye iske liye hume datamembers ko access specifiers deni hoti hai.
+//isko hum private access specifiers dete hai.
+
+//hum yeh to chahte hai ki memberfunction ke through datamembers ki access ho paye is liye memberfunction ko
+//public access specification dete hai.
+
+
+//after designing we will create a new object
+//jab ek naya object create hota hai us time uspar garbage value jati hai.
+// garbage value na ho aur uske jagah ek valid
+//initilisation value ho iske liye hum constructor padhte hai.
+
+//ab two ways of constructor hote hai
+//1. default constructor jaha par object khude se initilisation value le le.
+//2. parameterised constructor jaha object creation hote wakt hum khud se value provide kar paye.(as a developer)
+
+//designing of constructor
+
+//constructor ek no return type function hota hai lekin yeh with arguments ya without arguments wala hota hai
+//with arguments wala hai to banega parameterised constructor.
+//without arguments wala hai to banega default constructor.
+//constructor ka name class ke name ke equivalent hoga(jo class ka name hai wahi constructor ka name hai)
+
+//jab bhi ek naya object create hoga yeh complie time mai hum nahi bata sakte hai ki kitna create hoga.
+//jab ek program chal raha hoga yeh decide kar pana possible nahi hai ki kitne object honge yeh
+// user count, product count, order count, message count.
+//aaise time par runtime ke basis par deicison lena padtha hai ise dynamic memory allocation bolte hai....
+//isme jo space of physical memory use hogi wo heap memory hogi.
+//is pure concept ko runtime polymorphism bolte hai. kyuki same name ka 2 object ho sakta hai jinke kaam alag alag honge
+
+//runtime polymorphism par ek object jo dynamically create hoga uske liye new keyword ka use karte hai.
+//dynamically usse space allocate ki jayegi yeh space kisi pointer ke through point karwana padhega
+//wo pointer us memory ka reference variable khelayega.
+
+//User *ptr = new User(); //default constructor ka tarika
+//const h = new object();
+
+//User *ptr = new User("prajjal","prajjaldhar@akjsd.com","5446"); //parameterised constructor ka tarika
+//const h = new object("prajjal","prajjaldhar@akjsd.com","5446"); //javaScript
+
+
+
+--------------------------------------------
+/design a object(Schema design) that holds information of car ==>class/ Schema
+//carname, cardescription, carprice, carreleaseyear. ===>data members
+//getdetails, printdetails
+//object initialtion parameterised carname="null",cardescription="null", carprice=0, carreleaseyear="null"
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Car
+{
+  private:
+    string carname;
+    string cardescription;
+    int carprice;
+    string carreleaseyear;
+  public:
+    Car()
+    {
+        carname="null";
+        cardescription="null";
+        carprice=0;
+        carreleaseyear="null";
+    }
+    void getdetails()
+    {
+        cout<<"Enter value for carname:\n";
+        cin>>carname;
+        cout<<"Enter value for cardescription\n";
+        cin>>cardescription;
+        cout<<"Enter value for carprice\n";
+        cin>>carprice;
+        cout<<"Enter value for carreleaseyear\n";
+        cin>>carreleaseyear;
+    }
+     void printdetails()
+    {
+       
+        cout<< "carname is: " <<carname;
+    }
+
+};
+
+
+int main()
+{
+    Car *ptr= new Car();
+    ptr->getdetails();
+    ptr->printdetails();
+   
+}
+
+----------------------------------------------------------
+OOPS QUESTION WITH DEFAULT AND PARAMETERISED CONSTRUCTOR
+#include<bits/stdc++.h>
+using namespace std;
+
+class Emp
+{
+    private:
+            int emp_id;
+            string name;
+            int salary;
+    public:
+        Emp()
+        {
+            emp_id=0;
+            name="null";
+            salary="null";
+        }
+        Emp(int emp_id,string name,int salary)
+        {
+            this.emp_id=emp_id;
+            this.name=name;
+            this.salary=salary;
+        }
+        void getdetails()
+        {
+            cout<<"Enter the value for emp_id:\n";
+            cin>>emp_id;
+            cout<<"Enter the value for name:\n";
+            cin>>name;
+            cout<<"Enter the value for salary:\n";
+            cin>>salary;
+        }
+        void display()
+        {
+            cout<<"Employee id is:"<<emp_id<<"\n";
+            cout<<"Name of Employee is:"<<name<<"\n";
+            cout<<"Salary is: "<<salary<<"\n";
+        }
+        ~Emp();//destructor
+};
+
+
+int main()
+{
+    Emp *ptr = new Emp();//default constructor wla object initialise hoga (create)
+    Emp *ptr2 = new Emp(1,"Yash",20000);//parameterised wala object initialise hoga
+    ptr1->display();
+    ptr2->display();
+    //already created object mai new details add karna
+    ptr1->getdetails();
+    ptr1->display();
+    ptr2->getdetails();//update
+    ptr2->display();
+   
+}
+
+
+----------------------------------------------------
+
+OOPS QUESTION WITH DEFAULT AND PARAMETERISE CONSTRUCTOR WITH THEORY
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Emp
+{
+    private:
+            int emp_id;
+            string name;
+            int salary;
+            //yaha par private memeber mai declared data ki access main function mai directly nahi ki ja sakti hai
+            //it can only be access through memeber function.
+    public:
+        Emp() //yeh default constructor hai
+        {
+            emp_id=0;
+            name="null";
+            salary=0;
+        }
+        Emp(int emp_id,string name,int salary)//yeh parameterised constructor hai
+        {
+            this->emp_id=emp_id;// this yaha par object referencing ka kaam kar rahi hai
+            //upar function mai jo emp_id, name and salary hai wo function paramter hai usko object mai
+            //refer karne ka kaam this kar rahi hai ise object referencing bolte hai
+            this->name=name;
+            this->salary=salary;
+        }
+        //yaha hume 2 types of constructor nazar aa raha hai ise constructor overloading bolte hai...
+        //ek se zada constructor hai.
+        void getdetails()
+        {
+            cout<<"Enter the value for emp_id:\n";
+            cin>>emp_id;
+            cout<<"Enter the value for name:\n";
+            cin>>name;
+            cout<<"Enter the value for salary:\n";
+            cin>>salary;
+        }
+        //getdetails object mai koi update ya change karne ke kaam mai aa raha hai
+        void display()
+        {
+            cout<<"Employee id is:"<<emp_id<<"\n";
+            cout<<"Name of Employee is:"<<name<<"\n";
+            cout<<"Salary is: "<<salary<<"\n";
+        }
+        //display data memebers ko display karwane ke kaam mai aa raha hai
+        ~Emp();//destructor
+        //ek hi destructor hoga pure program mein to deallocate memory
+        //destructor ka overloading possible nahi hai
+};
+
+
+int main()
+{
+    Emp *ptr1 = new Emp();//default constructor wla object initialise hoga (create)
+    Emp *ptr2 = new Emp(1,"Yash",20000);//parameterised wala object initialise hoga
+    ptr1->display();
+    ptr2->display();
+    //already created object mai new details add karna
+    ptr1->getdetails();
+    ptr1->display();
+    ptr2->getdetails();//update
+    ptr2->display();
+   
+}
+
+
+-------------------------------------\
+
+SAME THING AS ABOVE WITH ENCAPSULATION CONCEPT
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Emp
+{
+    //Encapsulation matalb jaha data memeber and memeber function ko ek saath bind up kiya jata hai aur wo ek hi scope mai hai
+    private:
+            int emp_id;
+            string name;
+            int salary;
+            //yaha par private memeber mai declared data ki access main function mai directly nahi ki ja sakti hai
+            //it can only be access through memeber function.
+    public:
+        Emp() //yeh default constructor hai
+        {
+            emp_id=0;
+            name="null";
+            salary=0;
+        }
+        Emp(int emp_id,string name,int salary)//yeh parameterised constructor hai
+        {
+            this->emp_id=emp_id;// this yaha par object referencing ka kaam kar rahi hai
+            //upar function mai jo emp_id, name and salary hai wo function paramter hai usko object mai
+            //refer karne ka kaam this kar rahi hai ise object referencing bolte hai
+            this->name=name;
+            this->salary=salary;
+        }
+        //yaha hume 2 types of constructor nazar aa raha hai ise constructor overloading bolte hai...
+        //ek se zada constructor hai.
+        void getdetails()
+        {
+            cout<<"Enter the value for emp_id:\n";
+            cin>>emp_id;
+            cout<<"Enter the value for name:\n";
+            cin>>name;
+            cout<<"Enter the value for salary:\n";
+            cin>>salary;
+        }
+        //getdetails object mai koi update ya change karne ke kaam mai aa raha hai
+        void display()
+        {
+            cout<<"Employee id is:"<<emp_id<<"\n";
+            cout<<"Name of Employee is:"<<name<<"\n";
+            cout<<"Salary is: "<<salary<<"\n";
+        }
+        //display data memebers ko display karwane ke kaam mai aa raha hai
+        ~Emp();//destructor
+        //ek hi destructor hoga pure program mein to deallocate memory
+        //destructor ka overloading possible nahi hai
+};
+
+
+int main()
+{
+    Emp *ptr1 = new Emp();//default constructor wla object initialise hoga (create)
+    Emp *ptr2 = new Emp(1,"Yash",20000);//parameterised wala object initialise hoga
+    ptr1->display();
+    ptr2->display();
+    //already created object mai new details add karna
+    ptr1->getdetails();
+    ptr1->display();
+    ptr2->getdetails();//update
+    ptr2->display();
+   
+}
+
+
+----------------------------------------------------------------------------
+NEXT DAY 
+

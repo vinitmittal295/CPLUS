@@ -1,0 +1,172 @@
+Q1) Create a base class called Animal with a method called speak(). Derive a class called Dog from Animal  speaking to output "Woof!". 
+How would you implement this in C++? 
+
+#include<bits/stdc++.h>
+using namespace std;
+//Base Class
+class Animal   
+{
+    public:
+       void speak()
+       {
+           cout<<"woof\n";
+       }
+};
+class Dog   :public Animal
+{
+    public:
+       void speaking ()
+       {
+           cout<<"give me warranty\n";
+       }
+};
+
+//Derived Class / Child Class
+
+
+
+int main()
+{
+   
+    Dog dognone;
+    dognone.speak();
+}
+
+Q)2.
+Create two base classes: engine and body. The Engine class should have a method startEngine(), and the Body class should have a method paint(). 
+Create a derived-class car that inherits from both the engine and body. How would you implement this in C++?
+
+#include<bits/stdc++.h>
+using namespace std;
+//Base Class
+class Engine
+{
+    public:
+       void startengine()
+       {
+           cout<<"start the Engine\n";
+       }
+};
+class Body
+{
+    public:
+       void paint()
+       {
+           cout<<"do the paint.\n";
+       }
+};
+
+//Derived Class / Child Class
+
+class Car:public Engine,public Body
+{
+    public:
+        void carmaking()
+        {
+            cout<<"car is being making.\n";
+        }
+};
+
+int main()
+{
+   
+    Car carstart;
+    carstart.startengine();
+    carstart.paint();
+}
+
+
+Q3)Create a base class Product with a method display(). Derive a class Electronics from Product and add a method showWarranty(). 
+Further, derive a class Mobile from Electronics and add a method showModel(). How would you implement this in C++?
+
+#include<bits/stdc++.h>
+using namespace std;
+//Base Class
+class Product 
+{
+    public:
+       void display()
+       {
+           cout<<"show me display\n";
+       }
+};
+class Electronics :public Product
+{
+    public:
+       void showWarranty()
+       {
+           cout<<"give me warranty\n";
+       }
+};
+
+//Derived Class / Child Class	
+
+class Mobile :public Electronics
+{
+    public:
+        void showModel()
+        {
+            cout<<"show the model\n";
+        }
+};
+
+int main()
+{
+   
+    Mobile mobileone;
+    mobileone.display();
+    mobileone.showWarranty();
+}
+
+
+Q5)
+Create a base class Person with a method getDetails(). Create two derived classes, Employee and Student, from Person. 
+Create another class, Intern, that inherits from both employees and students. How would you implement this in C++ to avoid ambiguity issues?
+	
+#include<bits/stdc++.h>
+using namespace std;
+//Base Class
+class Person  
+{
+    public:
+       void getDetails()
+       {
+           cout<<"show me display\n";
+       }
+};
+class Employee  :public Person
+{
+    public:
+       void showemployee()
+       {
+           cout<<"give me warranty\n";
+       }
+};
+class Student  :public Person
+{
+    public:
+       void showstudent()
+       {
+           cout<<"give me warranty\n";
+       }
+};
+
+//Derived Class / Child Class
+
+class Intern :public Employee, public Student
+{
+    public:
+        void showintern()
+        {
+            cout<<"show the model\n";
+        }
+};
+
+int main()
+{
+   
+    Intern internone;
+    internone.showemployee();
+    internone.showstudent();
+    //internone.getDetails(); //yeh person vale ki value access nhi kar skta hai
+}

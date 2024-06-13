@@ -1,0 +1,80 @@
+//copy constructor
+//int a;
+//int b;
+//b=a;
+//Student a; object
+//Student b; object
+//b=a; directly cannot be possible
+//passing the value of already created object as a argument to the constructor(function)
+#include<bits/stdc++.h>
+using namespace std;
+
+class Student
+{
+  private:
+    int rollno;
+    string name;
+    double fees;
+ public:
+    Student()
+    {
+        rollno=0;
+        name="null";
+        fees=0;
+    }
+    Student(int rollno,string name,double fees)
+    {
+        this->rollno=rollno;
+        this->name=name;
+        this->fees=fees;
+    }
+    Student(Student &s)
+    {
+        rollno=s.rollno;
+        name=s.name;
+        fees=s.fees;
+    }
+    void getdetails()
+    {
+        cout<<"Enter the value of rollno:\n";
+        cin>>rollno;
+        cout<<"Enter  the value of name:\n";
+        cin>>name;
+        cout<<"Enter the value of fees:\n";
+        cin>>fees;
+    }
+    void display()
+    {
+        cout<<"Student rollno: "<<rollno<<"\n";
+        cout<<"Student name: "<<name<<"\n";
+        cout<<"Student Fees: "<<fees<<"\n";
+    }
+};
+
+
+int main()
+{
+    Student defaultobj;//defaultobj is calling default constructor
+    defaultobj.display();
+    defaultobj.getdetails();
+    defaultobj.display();
+   
+    cout<<"\n\n new object will going to create\n";
+    Student paramaterisedobj(2,"praveen",5000);
+    paramaterisedobj.display();
+    paramaterisedobj.getdetails();
+    paramaterisedobj.display();
+   
+    cout<<"\n\n new object will going to copy the content of old object\n";
+    Student copyobj(paramaterisedobj);  
+    copyobj.display();
+   
+    // cout<<"\n\n copy object will show content of defaultobj\n";
+    // copyobj(defaultobj);
+    // copyobj.display();
+   
+   
+}
+
+Student s; ====>// complie time  memory
+Student *ptr = new Student(); //run time memory

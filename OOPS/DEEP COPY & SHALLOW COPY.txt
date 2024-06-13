@@ -1,0 +1,8 @@
+shallow copy: it stores the reference of the object to the original memory address.
+    what ever the changes we are performing are reflected back to the new object.
+    stored the copy of the original object and point to the reference object
+    Shallow copy is faster. data consistent.
+
+
+Deep Copy:copies the object value, doesnot refelect the original changes. copies only the values
+    hence if make any changes it wont refelect. compartively slower. data inconsistent

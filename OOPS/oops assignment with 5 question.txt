@@ -1,0 +1,251 @@
+1. Car Model:
+    Create a `Car` class with the following private attributes: `make`, `model`, and `year`.
+    Implement a parameterized constructor to initialize these attributes.
+    Write getter and setter methods for each attribute.
+    Implement a destructor to print a message when an object is destroyed.
+    Write a program to create an instance of `Car`, display its details using getter methods, modify the details using setter methods, and then display the updated details.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Emp
+{
+    private:
+            int emp_id;
+            string name;
+            int salary;
+    public:
+        Emp()
+        {
+            emp_id=0;
+            name="null";
+            salary="null";
+        }
+        Emp(int emp_id,string name,int salary)
+        {
+            this.emp_id=emp_id;
+            this.name=name;
+            this.salary=salary;
+        }
+        void getdetails()
+        {
+            cout<<"Enter the value for emp_id:\n";
+            cin>>emp_id;
+            cout<<"Enter the value for name:\n";
+            cin>>name;
+            cout<<"Enter the value for salary:\n";
+            cin>>salary;
+        }
+        void display()
+        {
+            cout<<"Employee id is:"<<emp_id<<"\n";
+            cout<<"Name of Employee is:"<<name<<"\n";
+            cout<<"Salary is: "<<salary<<"\n";
+        }
+        ~Emp();//destructor
+};
+
+
+int main()
+{
+    Emp *ptr = new Emp();//default constructor wla object initialise hoga (create)
+    Emp *ptr2 = new Emp(1,"Yash",20000);//parameterised wala object initialise hoga
+    ptr1->display();
+    ptr2->display();
+    //already created object mai new details add karna
+    ptr1->getdetails();
+    ptr1->display();
+    ptr2->getdetails();//update
+    ptr2->display();
+   
+}
+2. Product Model:
+    Define a `Product` class withthe following private attributes: `product_id`, `name`, and `price`.
+Implement a parameterized constructor to initialize the `Product` class attributes.
+Create getter and setter methods for each attribute.
+Implement a destructor to handle cleanup and display a message when the object is destroyed.
+Write a program to create multiple `Product` instances, display their details, modify some attributes using setter methods, and then display the updated details
+
+#include<bits/stdc++.h>
+using namespace std;
+class Product{
+    private:
+        int Product_id;
+        string Product_name;
+        int Product_price;
+        
+    public:
+    Product(){
+        Product_id=0;
+        Product_name="NULL";
+        Product_price=0;
+    }
+    Product(int Product_id,string Product_name,int Product_price){
+        this->Product_id=Product_id;
+        this->Product_name=Product_name;
+        this->Product_price=Product_price;
+    }
+    void getDetails(){
+        cout<<"enter the product id:"<<endl;
+        cin>>Product_id;
+        cout<<"enter the product name:"<<endl;
+        cin>>Product_name;
+        cout<<"enter the product price:"<<endl;
+        cin>>Product_price;
+    }
+    void display(){
+        cout<<"prodcut id is :"<<Product_id<<endl;
+        cout<<"prodcut name is :"<<Product_name<<endl;
+        cout<<"prodcut price is :"<<Product_price<<endl;
+    }
+    
+};
+
+
+int main()
+{
+    //phle 2 object bna denge
+    Product*ptr1=new Product();
+    Product*ptr2=new Product(1,"vinit", 2000);
+    //yha default vala call ho jayega
+    
+    ptr1->display(); 
+    //yha parametrised function call ho jayega
+    ptr2->display();
+    //yha deafult vale value add ho jayegi;
+    ptr1->getDetails();
+    //default vale ki value display ho jayegi
+    ptr1->display();
+    //parametrised m value add hogi 
+    ptr2->getDetails();
+    //parametrised vali value display hogi
+    ptr2->display();
+    
+}
+3. Order Model:
+Create an `Order` class withthe following private attributes: `order_id`, `customer_name`, and `total_amount`.
+Implement a parameterized constructor to initialize these attributes.
+Write getter and setter methods for each attribute.
+Implement a destructor that prints a message indicating that the order object is being deleted.
+Write a program that creates an `Order` object, displays the order details, updates the `customer_name` and `total_amount` using setter methods, and then displays the updated details.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Model{
+    
+    private:
+    int order_id;
+    string customer_name;
+    int total_amount;
+    
+    public:
+    
+    Model(){
+        order_id=0;
+        customer_name="NULL";
+        total_amount=0;
+    }
+    Model(int order_id,string customer_name,int total_amount){
+        this->order_id=order_id;
+        this->customer_name=customer_name;
+        this->total_amount=total_amount;
+    }
+    
+    void getDetails(){
+        cout<<"enter value of order_id"<<endl;
+        cin>>order_id;
+        cout<<"enter value of customer_name"<<endl;
+        cin>>customer_name;
+        cout<<"enter value of total_amount"<<endl;
+        cin>>total_amount;
+    }
+    void display(){
+        cout<<"order_id is "<<order_id<<endl;
+        cout<<"customer_name is "<<customer_name<<endl;
+        cout<<"total_amount is "<<total_amount<<endl;
+        
+    }
+    ~Model();
+};
+
+
+int main()
+{
+    
+    Model *ptr1=new Model();
+    Model *ptr2=new Model(1,"vunir",666);
+    ptr1->display();
+    ptr2->display();
+    ptr1->getDetails();
+    ptr1->display();
+    ptr2->getDetails();
+    ptr2->display();
+
+    
+}
+
+5. Book Model:
+Create a `Book` class with private attributes: `isbn`, `title`, and `author`.
+Implement a parameterized constructor to initialize these attributes.
+Write getter and setter methods for each attribute.
+Implement a destructor that prints a message when a `Book` object is deleted.
+Write a program that creates a `Book` object, displays the book details using getter methods, modifies the `title` and `author` using setter methods, and then displays the updated details.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Book{
+    
+    private:
+    int isbn;
+    string title;
+    int total_amount;
+    
+    public:
+    
+    Book(){
+        isbn=0;
+        title="NULL";
+        total_amount=0;
+    }
+    Book(int isbn,string title,int total_amount){
+        this->isbn=isbn;
+        this->title=title;
+        this->total_amount=total_amount;
+    }
+    
+    void getDetails(){
+        cout<<"enter value of order_id"<<endl;
+        cin>>isbn;
+        cout<<"enter value of customer_name"<<endl;
+        cin>>title;
+        cout<<"enter value of total_amount"<<endl;
+        cin>>total_amount;
+    }
+    void display(){
+        cout<<"isbn is "<<isbn<<endl;
+        cout<<"title is "<<title<<endl;
+        cout<<"total_amount is "<<total_amount<<endl;
+        
+    }
+    ~Book();
+};
+
+
+int main()
+{
+    
+    Book *ptr1=new Book();
+    Book *ptr2=new Book(1,"vunir",666);
+    ptr1->display();
+    ptr2->display();
+    ptr1->getDetails();
+    ptr1->display();
+    
+    
+    
+}
