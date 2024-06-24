@@ -1,0 +1,27 @@
+1)Create a child class Bus that will inherit all of the variables and methods of the Vehicle class
+
+
+#include<bits/stdc++.h>
+using namespace std;
+class Vehicle{
+    public:
+    
+    void run(){
+        cout<<"thisd will run";
+    }
+};
+class Bus:public Vehicle{
+    public:
+    
+    void start(){
+            cout<<"this will start";
+        }
+};
+    
+
+int main(){
+    Bus one;
+    one.start();
+}
+
+2)

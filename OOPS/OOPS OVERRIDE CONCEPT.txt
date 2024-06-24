@@ -1,0 +1,70 @@
+//class shape ==>area() member function
+//derive class circle, rectangle
+
+//derive class base ko inherit karne wala
+
+//multiple inheritance ka concept hai
+
+//base class mai area ki defination properly nahi de sakte
+//area ka abstract(blueprint) bana
+
+//circle class==>area milega shape class ==>modify
+//rectangle==>area ==>modify
+
+
+//circle ==>area ==>radius
+//rectangle==>area ===>length,breadth
+
+//overloading  ek hi function name lekin upar
+//no of inputs(arguments) ke basis par unhe
+//differ kiya jata hai unka unpar function alag
+//alag performance deti hai.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+class Shape{
+    public:
+    virtual double area() const = 0;//pure virtual function
+};
+
+class Circle:public Shape
+{
+    private:
+        double radius;
+    public:
+    Circle(double radius)
+    {
+        this->radius=radius;
+    }
+    //overriding
+    double area() const override
+    {
+        return 3.14*radius*radius;
+    }
+};
+
+class Rectangle:public Shape
+{
+    private:
+        double length;
+        double breadth;
+    public:
+        Rectangle(double length,double breadth)
+        {
+            this->length=length;
+            this->breadth=breadth;
+        }
+        double area() const override
+        {
+            return breadth*length;
+        }
+};
+
+int main()
+{
+    Circle *mycircle = new Circle(2.0);
+    cout<<"Area of cicle is "<< mycircle->area()<<"\n";
+    Rectangle *myrectangle = new Rectangle(3.0,2.0);
+    cout<<"Area of Rectangle is "<< myrectangle->area();
+}

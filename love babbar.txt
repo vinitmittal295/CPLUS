@@ -2486,3 +2486,6 @@ int main(){
     }
     cout<<maxi;
 }
+
+------------------------------------------------
+Q) 	max diffrence between two number
