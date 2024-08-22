@@ -336,10 +336,10 @@ int main()
 }
 
 14. Write a for loop to check if a number is prime or not.
-#include<bits/stdc++.h>
+##include<bits/stdc++.h>
 using namespace std;
-int reverse(int num,int flag)
-{
+int reverse(int num){
+    int flag=1;
     for(int i=2; i<num; i++){
         if(num%i==0){
             flag=0;
@@ -356,13 +356,10 @@ int reverse(int num,int flag)
 }
 int main(){
     int num;
-    int sum;
-    int flag=1;
-    int g;
     cout<<"enter the num\n";
     cin>>num;
     
-    reverse(num,sum);
+    reverse(num);
     
 }
 14. Create a program to print all palindrome numbers between two given numbers.
