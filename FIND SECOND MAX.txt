@@ -1,0 +1,25 @@
+20) find second max
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<int>num={1,5,3,4,3,6};
+    int ans=-1;
+    
+    for(int i=0; i<num.size(); i++){
+        if(num[i]>ans){
+            ans= num[i];
+        }
+    }
+    int second=-1;
+    for(int i=0; i<num.size(); i++){
+        if(num[i]!=ans){
+            second=max(second,num[i]);
+            
+        }
+    }
+    cout<<second;
+    
+}
