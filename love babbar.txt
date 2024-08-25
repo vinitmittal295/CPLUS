@@ -1082,7 +1082,7 @@ for(int i=0; i<ans.size(); i++){
 }
 
 
-3) FIND INTERSECTION POF TWO ARRAYS
+3) FIND INTERSECTION OF TWO ARRAYS
 
     #include <bits/stdc++.h>
     
@@ -1530,7 +1530,7 @@ int main()
         cout<<it<<" ";
     }
 }
-9)FIND MAX OR MIN THREE NUMBER BYB USING SORT FUNCTION
+9)FIND MAX OR MIN THREE NUMBER BY USING SORT FUNCTION
 
 #include<bits/stdc++.h>
 using namespace std;
