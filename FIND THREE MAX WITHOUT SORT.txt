@@ -1,0 +1,40 @@
+10)
+FIND MAX OF THREE NUMBER WITHOUT USING SORT FUNCTION
+
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int>findmin(vector<int>&arr)
+{
+   
+   int first = INT_MAX, second = INT_MAX, third = INT_MAX;
+   for(int i=0;i<arr.size();i++)
+   {
+       if(arr[i]<first)
+       {
+           third=second;
+           second=first;
+           first=arr[i];
+       }
+       else if(arr[i]<second)
+       {
+           third=second;
+           second=arr[i];
+       }
+       else if(arr[i]<third)
+       {
+           third=arr[i];
+       }
+   }
+   return {first,second,third};
+}
+
+int main()
+{
+    vector<int>num={-3,-4,2,1,6,9,7};
+    vector<int>minThree=findmin(num);
+    for(auto it:minThree)
+    {
+        cout<<it<<" ";
+    }
+}
