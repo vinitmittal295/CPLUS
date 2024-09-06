@@ -1,0 +1,22 @@
+
+
+	
+using namespace std;
+int main(){
+    vector<int>arr={10,10,10,0,0,40,5};
+    int nonzero=0; //yha indexing k liye isko le rhe h yha non zero ki jagah kuch b le skte h yr bs ek index ko age leke jayega 
+    //aur main arr se swap krne me madad krega 
+    for(int j=0; j<arr.size();j++){
+        if(arr[j] !=10){
+            swap(arr[j],arr[nonzero]);
+            //jab tak j ko 10 k bina vala ni milega vo chlta rhega 
+            // aur jab mil jayega to vo swap kr dega nonzero k sath jo new indedx li thi
+            nonzero++;
+        }
+    }
+    for(auto it:arr){
+        cout<<it<<" ";
+    }
+}
+
+

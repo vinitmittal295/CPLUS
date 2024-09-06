@@ -1,0 +1,20 @@
+Q rotate the array
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<int>arr={1,2,3,4};
+    int n=arr.size();
+    int k=2;
+    vector<int>temp(n);
+    for(int i=0; i<n; i++){
+        temp[(i+k)%n]=arr[i];
+    }
+    arr=temp;
+    // arr me hi chahiye to nums k valur ko arr me copy kr lenge
+    // ni to direct temp ko b print krva skte h
+    for(auto it:arr){
+        cout<<it<<" ";
+    }
+}
