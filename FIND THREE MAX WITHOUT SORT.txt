@@ -1,6 +1,45 @@
 10)
 FIND MAX OF THREE NUMBER WITHOUT USING SORT FUNCTION
 
+OR GDB
+FOR MAX
+
+
+using namespace std;
+#include<bits/stdc++.h>
+
+int main()
+{
+    
+    vector<int>nums={1,3,4,5,7};
+    int first=INT_MIN, second=INT_MIN, third=INT_MIN;
+    
+    int n=nums.size();
+    for(int i=0; i<n; i++){
+        if(nums[i]>first){
+            third=second;
+            second=first;
+            first=nums[i];
+            
+        }
+        else if(nums[i]>second){
+            third=second;
+            second=nums[i];
+        }
+        else if(nums[i]>third){
+            third=nums[i];
+        }
+    }
+    cout<<first;
+    cout<<second;
+    cout<<third;
+
+    return 0;
+}
+
+
+FOR MIN
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -38,3 +77,5 @@ int main()
         cout<<it<<" ";
     }
 }
+
+
