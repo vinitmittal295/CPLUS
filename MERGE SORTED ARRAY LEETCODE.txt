@@ -41,6 +41,61 @@ nums2.length == n
 ANS
 
 
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    vector<int>nums1={1,2,3,6,8,10};
+    vector<int>nums2={4,5};
+    vector<int>nums3(8,0);
+    int m=nums1.size();
+    int n=nums2.size();
+    int i=0,j=0, k=0;
+    
+    while(i<m && j<n){
+        if(nums1[i]<nums2[j]){
+            nums3[k]=nums1[i];
+            i++;
+            k++;
+        }
+        else{
+            nums3[k]=nums2[j];
+            j++;
+            k++;
+        }
+    }
+    
+    while(i<m){
+        nums3[k]=nums1[i];
+        i++;
+        k++;
+    }
+    while(j<n){
+        nums3[k]=nums2[j];
+        j++;
+        k++;
+    }
+    for(auto it:nums3){
+        cout<<it<<" ";
+    }
+
+    return 0;
+}
+
+
+
+
+
 class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
@@ -50,3 +105,52 @@ public:
         sort(nums1.begin(),nums1.end());
     }
 };
+
+
+
+in same arrau 
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    vector<int>nums1={1,2,3,6,8,10}; // original nums1
+    vector<int>nums2={4,5};          // nums2
+    int m = nums1.size();
+    int n = nums2.size();
+
+    // Resize nums1 to hold m + n elements
+    nums1.resize(m + n);
+    
+    int i = m - 1; // Index for the last element in the original nums1
+    int j = n - 1; // Index for the last element in nums2
+    int k = m + n - 1; // Index for the last element in the resized nums1
+    
+    // Start merging from the end of the arrays
+    while(i >= 0 && j >= 0) {
+        if(nums1[i] > nums2[j]) {
+            nums1[k] = nums1[i];
+            i--;
+        } else {
+            nums1[k] = nums2[j];
+            j--;
+        }
+        k--;
+    }
+    
+    // If any elements are left in nums2, copy them
+    while(j >= 0) {
+        nums1[k] = nums2[j];
+        j--;
+        k--;
+    }
+    
+    // Output the merged array
+    for(auto it: nums1){
+        cout << it << " ";
+    }
+
+    return 0;
+}
