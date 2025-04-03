@@ -25,7 +25,7 @@
 //ek object apne pass variable ke saath saath kuch functions bhi store kar sakta hai
 //prajjal ==> sleeping(body) walking(legs) drinking(mouth) seeing(eyes) ===>member function
 
-
+//concept of data hiding(abstraction)
 //User agar ek class hai
 // Prajjal uska ek obejec hai usme stored information jasie ki username, email, password are data members
 //Prajjal(object) agr login(username,email) karta hai then login is member function
@@ -35,12 +35,12 @@
 //matalb koi bahar wala username, email ko change nahi karna chahiye sirf aur sirf
 // uske member function hi usme change kar sakein
 
-//This concept is called as abstraction(data hiding).
 
-//object ke pass datamembers hai aur member function hai aur dono ek hi jagah hone chahiye is concept ka nam hoga encapsulation.
+
+//concept of data encapsulation(data binding)
+//object ke pass datamembers hai aur member function hai aur dono ek hi jagah hone chahiye is concept ka nam hoga
+ encapsulation.
 //binding of datamembers and member function into a single entity is called as encapsulation.
-
-
 
 //designing of binding data members and memberfunction into single entity is possible through class.
 

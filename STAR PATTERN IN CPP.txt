@@ -379,13 +379,13 @@ int main()
     return 0;
 }
 
-19) [?2004l
+19)
 5 
 5 4 
 5 4 3 
 5 4 3 2 
 5 4 3 2 1 
-[?2004h
+
 
 #include <bits/stdc++.h> 
 using namespace std;
@@ -507,6 +507,78 @@ int main(){
         }
         for(int col=row; col>=1; col--){
             cout<<col;
+        }
+        cout<<endl;
+    }
+}
+
+25 
+    *
+   ***
+  *****
+ *******
+*********
+
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    for(int row=1; row<=5; row++){
+        for(int col=1; col<=5-row; col++){
+            cout<<" ";
+        }
+        for(int col=1; col<=(2*row-1); col++)
+        {
+        cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+
+26) 
+
+    1
+   121
+  12321
+ 1234321
+123454321
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    for(int row=1; row<=5; row++){
+        for(int col=1; col<=5-row; col++){
+            cout<<" ";
+        }
+        for(int col=1; col<=row; col++)
+        {
+        cout<<col;
+        }
+        for(int col=row-1; col>=1; col--){
+            cout<<col;
+        }
+        cout<<endl;
+    }
+}
+
+27)
+*********
+ *******
+  *****
+   ***
+    *
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    for(int row=5; row>=1; row--){
+        for(int col=1; col<=5-row; col++){
+            cout<<" ";
+        }
+        for(int col=1; col<=2*row-1; col++)
+        {
+        cout<<"*";
         }
         cout<<endl;
     }
