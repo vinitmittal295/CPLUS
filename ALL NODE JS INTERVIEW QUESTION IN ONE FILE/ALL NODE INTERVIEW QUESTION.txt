@@ -56,3 +56,198 @@ More accurate for deferring execution	          Less predictable for near-immedi
 4) BODY PARSER IN NODE JS
 In Node.js (especially with Express.js), body-parser is a middleware used to parse the body of incoming HTTP requests—so you
  can easily access data like form inputs or JSON payloads in req.body.
+
+What Does body-parser Do?
+It reads the body of a request (e.g., POST, PUT) and converts it into a JavaScript object that you can use in your route handlers.
+
+| Format                              | Middleware                                |
+| ----------------------------------- | ----------------------------------------- |
+| JSON                                | `express.json()`                          |
+| Form data (`x-www-form-urlencoded`) | `express.urlencoded({ extended: false })` |
+| File uploads (multipart/form-data)  | Needs `multer` or similar                 |
+
+
+
+ 1. What is Node.js?
+Answer: Node.js is a JavaScript runtime built on Chrome's V8 engine. It allows for the execution of JavaScript code outside of the browser, making it ideal for server-side development. It uses a non-blocking, event-driven I/O model, which makes it lightweight and efficient for building scalable network applications.
+
+2. What is the difference between require and import in Node.js?
+Answer:
+require: It is used in CommonJS modules to import dependencies. Example: const express = require('express');
+import: It is part of ES Modules (ESM), and it is the newer standard. Example: import express from 'express';
+In Node.js, CommonJS modules are used by default, but Node has started supporting ES modules from version 12 and above.
+
+3. What is the Event Loop in Node.js?
+Answer: The event loop is the mechanism by which Node.js handles asynchronous callbacks. It allows Node.js to perform non-blocking
+ I/O operations by putting them on a queue and executing them later. It enables the event-driven architecture, ensuring that Node.js
+ can handle multiple requests without blocking the execution of other tasks.
+
+4. What are Streams in Node.js?
+Answer: Streams are objects in Node.js that allow reading or writing data in a continuous flow. There are four types of streams in
+ Node.js:
+Readable: Streams from which data can be read (e.g., fs.createReadStream()).
+Writable: Streams to which data can be written (e.g., fs.createWriteStream()).
+Duplex: Streams that can both read and write data (e.g., TCP sockets).
+Transform: A type of duplex stream that can modify data as it is read and written (e.g., zlib streams).
+5. What is the difference between process.nextTick(), setImmediate(), and setTimeout()?
+Answer: THESE ALL ARE ALL TIMER MODULE
+process.nextTick(): Executes a callback immediately after the current operation completes, before any I/O tasks.
+setImmediate(): Executes the callback after the current event loop cycle, allowing I/O events to be processed first.
+setTimeout(): Executes a callback after a specified delay (in milliseconds), scheduling it in the timer phase of the event loop.
+
+6. What is the use of the global object in Node.js?
+Answer: The global object in Node.js provides a way to access global variables or functions. It is equivalent to the window object in browsers. For example, global.setTimeout() works the same way as setTimeout().
+
+7. Explain the difference between == and === in JavaScript.
+Answer:
+==: Compares values with type coercion (converts types if necessary).
+===: Strict equality operator, compares both value and type without any coercion.
+
+8. What is middleware in Node.js and Express?
+Answer: Middleware in Node.js (specifically in Express) refers to functions that have access to the request, response, and the next middleware function in the request-response cycle. Middleware can be used for tasks such as logging, authentication, error handling, etc. Example:
+js
+Copy code
+app.use((req, res, next) => {
+  console.log('Request received');
+  next();
+});
+9. What is the purpose of the cluster module in Node.js?
+Answer: The cluster module allows you to create child processes (workers) to handle the load of multiple CPU cores. This helps improve performance and scalability by leveraging multi-core processors in a Node.js application.
+10. What are Promises in JavaScript?
+Answer: A Promise is an object that represents the eventual completion (or failure) of an asynchronous operation. It is used to handle asynchronous operations in a more manageable way than callbacks.
+States of a promise:
+Pending: Initial state.
+Fulfilled: Operation completed successfully.
+Rejected: Operation failed.
+11. Explain the concept of callback hell in Node.js.
+Answer: Callback hell refers to the problem of nested callbacks that result in deeply indented code, making it hard to read and maintain. It is often caused by handling multiple asynchronous operations sequentially with callbacks. Promises, async/await, or libraries like async are used to mitigate callback hell.
+12. What is an npm (Node Package Manager)?
+Answer: npm is the package manager for Node.js, used to install, update, and manage packages or dependencies for Node.js applications. The npm command allows developers to add libraries, manage versions, and handle dependencies in a Node.js project.
+13. What is the purpose of app.listen() in Express.js?
+Answer: app.listen() is used to bind and listen to connections on a specified host and port. It starts the Express application and waits for incoming requests.
+js
+Copy code
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+14. What is the difference between fs.readFile() and fs.createReadStream() in Node.js?
+Answer:
+fs.readFile(): Reads the entire file into memory at once and returns it as a buffer or string, which can be inefficient for large files.
+fs.createReadStream(): Reads the file in chunks, making it more memory-efficient for large files, as it processes data in a stream.
+15. How do you handle errors in Node.js?
+Answer: Errors in Node.js can be handled using try/catch blocks for synchronous code and .catch() or async/await for asynchronous code (when using Promises). Additionally, Node.js provides an uncaughtException event that can be used to catch errors that aren't handled. Example:
+js
+Copy code
+process.on('uncaughtException', (err) => {
+  console.log('Unhandled error:', err);
+});
+These questions cover the fundamentals of Node.js, testing a candidate’s understanding of the core concepts, performance optimizations, and handling of asynchronous operations.
+
+
+You said:
+more
+ChatGPT said:
+ChatGPT
+Here are additional Node.js interview questions that cover more advanced concepts, performance optimizations, and practical use cases:
+
+16. What is the v8 module in Node.js?
+Answer: The v8 module allows you to interact with the underlying V8 JavaScript engine in Node.js. It provides methods to access information about the V8 engine, such as memory usage, heap statistics, and performance optimization options. Example:
+js
+Copy code
+const v8 = require('v8');
+console.log(v8.getHeapStatistics());
+17. What are the advantages of using async/await over callbacks and Promises?
+Answer: async/await makes asynchronous code look and behave more like synchronous code, making it easier to read and maintain. The main advantages include:
+Cleaner code: Reduces the need for chaining .then() and .catch().
+Error handling: Easier to handle errors with try/catch.
+Avoiding callback hell: Avoids deep nesting of callbacks in asynchronous code.
+18. What is a worker thread in Node.js?
+Answer: Worker threads allow you to run JavaScript code in parallel on multiple threads, making use of multi-core systems. This can be useful for CPU-intensive operations that would otherwise block the event loop.
+Example:
+js
+Copy code
+const { Worker } = require('worker_threads');
+const worker = new Worker('./worker.js');
+worker.on('message', (message) => console.log(message));
+19. What is the process object in Node.js?
+Answer: The process object is a global object in Node.js that provides information and control over the current Node.js process. It includes methods and properties for interacting with the environment, such as:
+process.argv: An array containing command-line arguments.
+process.exit(): Ends the process.
+process.env: Accesses environment variables.
+process.pid: The process ID.
+20. Explain the concept of "non-blocking" in Node.js.
+Answer: Non-blocking I/O in Node.js refers to operations that do not block the event loop while waiting for resources such as data from a database or a file. Instead of halting execution until an I/O task is completed, Node.js delegates that task and moves on to other operations. This allows Node.js to handle many tasks concurrently with minimal performance overhead.
+21. What is CORS and how do you handle it in Node.js?
+Answer: CORS (Cross-Origin Resource Sharing) is a mechanism that allows resources on a web server to be requested from another domain. In Node.js, you can handle CORS using the cors middleware in Express.
+Example:
+js
+Copy code
+const cors = require('cors');
+app.use(cors());
+22. How can you handle file uploads in Node.js?
+Answer: You can handle file uploads in Node.js using libraries like multer, which processes multipart/form-data, typically used for file uploads. Example:
+js
+Copy code
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
+app.post('/upload', upload.single('file'), (req, res) => {
+  res.send('File uploaded successfully');
+});
+23. What is the difference between Buffer and String in Node.js?
+Answer:
+Buffer: A Buffer is a raw binary data storage that is used to handle streams of binary data, such as when dealing with files, network protocols, or cryptographic functions.
+String: A string is a sequence of characters encoded in a specific character encoding, like UTF-8. Buffers are used for raw binary data, whereas strings are used for text.
+24. What is the purpose of express.Router() in Express.js?
+Answer: express.Router() is a mechanism in Express that allows you to modularize your application. It helps in organizing routes and handling different HTTP methods more efficiently. It can be used to define routes in different modules and then include them in the main application. Example:
+js
+Copy code
+const express = require('express');
+const router = express.Router();
+router.get('/user', (req, res) => {
+  res.send('User route');
+});
+app.use('/api', router);
+25. What is cluster.fork() in Node.js?
+Answer: cluster.fork() is a method used in the cluster module to create a child process (worker) that can handle incoming requests. This helps to utilize multiple CPU cores and improves performance in multi-core systems. Example:
+js
+Copy code
+const cluster = require('cluster');
+const http = require('http');
+if (cluster.isMaster) {
+  cluster.fork();  // Creates a worker process
+} else {
+  http.createServer((req, res) => {
+    res.writeHead(200);
+    res.end('Hello World');
+  }).listen(8000);
+}
+26. What is the use of module.exports and exports in Node.js?
+Answer: Both module.exports and exports are used to export modules in Node.js, but module.exports is the actual object that is returned when a module is required. exports is a shorthand reference to module.exports.
+If you assign a value to exports, it will still point to module.exports, but if you assign something directly to module.exports, you are overriding the reference.
+js
+Copy code
+// Using module.exports
+module.exports = function() { console.log('Hello'); };
+
+// Using exports
+exports.sayHello = function() { console.log('Hello'); };
+27. What is npx in Node.js?
+Answer: npx is a package runner tool that comes with npm. It allows you to execute binaries from Node modules without globally installing them. For example, you can run a package like create-react-app without having to install it globally. Example:
+bash
+Copy code
+npx create-react-app my-app
+28. How does Node.js handle memory management?
+Answer: Node.js uses the V8 garbage collector to handle memory management. It automatically manages memory allocation and deallocation. However, developers should be mindful of memory leaks, which can occur if objects are not properly cleaned up or if there is unnecessary memory usage.
+29. What are some common performance optimization techniques in Node.js?
+Answer:
+Use of cluster module: Leverage multiple CPU cores by creating worker processes.
+Caching: Use in-memory caches (e.g., Redis) to reduce database load.
+Asynchronous programming: Use non-blocking I/O operations and avoid blocking the event loop.
+Database optimization: Use indexing, limit query results, and batch requests to the database.
+30. What is a "memory leak" in Node.js, and how can it be avoided?
+Answer: A memory leak occurs when objects are no longer needed but are not released from memory. In Node.js, this can happen when references to objects are retained unnecessarily.
+To avoid memory leaks:
+Use the global object sparingly.
+Properly close database connections.
+Monitor memory usage regularly with tools like heapdump or v8-profiler.
+These advanced questions are designed to test deeper knowledge of Node.js, its ecosystem, performance considerations, and the ability to build efficient, scalable applications.
