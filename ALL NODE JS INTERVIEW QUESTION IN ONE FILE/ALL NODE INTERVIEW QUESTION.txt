@@ -1,0 +1,58 @@
+1)WHAT IS BUFFER
+
+In Node.js, a Buffer is a built-in global object used to handle binary data directly in memory. Buffers are especially useful when dealing with data from file systems, network protocols, or streams where raw binary access is needed.
+
+When and Why to Use Buffers
+Reading or writing binary files (e.g., images, videos).
+
+Working with TCP streams or other low-level data streams.
+
+Manipulating raw data (e.g., from a network protocol like HTTP or FTP).
+
+ommon Buffer Methods
+Method	Description
+Buffer.from()	Creates a buffer from a string, array, or another buffer
+Buffer.alloc(size)	Creates a zero-filled buffer
+buf.toString()	Converts buffer to a string
+buf.write(string)	Writes string to buffer
+buf.slice(start, end)	Creates a sub-buffer
+buf.length	Gets the length of the buffer
+
+2) STREAMS IN NODE JS
+In Node.js, streams are a powerful way to handle reading and writing data asynchronously. They are especially useful for working with
+ large data (like files or network requests), because they allow you to process data chunk by chunk without loading everything into
+ memory at once.
+
+Types of Streams
+Node.js provides four fundamental types of streams:
+
+Stream Type	Example	Methods
+Readable	Reading from a file	.on('data'), .read()
+Writable	Writing to a file	.write(), .end()
+Duplex	Read & write (e.g., TCP socket)	Inherits both
+Transform	Modify data while reading/writing	e.g., zlib compression
+
+
+3) TIMER MODULE IN NODE JS
+The Timer module in Node.js provides functions to schedule the execution of code after a delay or at regular intervals. 
+It's part of the global scope, so you don't need to import it explicitly.
+
+
+setTimeout(cb, delay)	Runs cb once after delay milliseconds
+clearTimeout(timeout)	Cancels a setTimeout
+setInterval(cb, interval)	Repeats cb every interval milliseconds
+clearInterval(interval)	Cancels a setInterval
+setImmediate(cb)	Executes cb immediately after I/O events
+clearImmediate(immediate)	Cancels a setImmediate
+
+
+
+ setImmediate                        vs           setTimeout(..., 0)
+setImmediate	                                  setTimeout(..., 0)
+Executes after I/O events	                Executes after current event loop
+More accurate for deferring execution	          Less predictable for near-immediate execution
+
+
+4) BODY PARSER IN NODE JS
+In Node.js (especially with Express.js), body-parser is a middleware used to parse the body of incoming HTTP requests—so you
+ can easily access data like form inputs or JSON payloads in req.body.

@@ -1,0 +1,17 @@
+THROTTLING
+
+Throttle ensures that a function is only executed once every set interval, regardless of how many times the event occurs.
+
+✅ Use Case:
+Scroll position tracking
+
+Rate-limiting API calls
+
+DEBOUNCING
+
+Debounce ensures that a function is only executed after a certain delay, and only if the event hasn't been triggered again in that delay.
+
+✅ Use Case:
+Search input auto-suggestions
+
+Resize event handler
