@@ -1,0 +1,191 @@
+1. Find the Missing Number in an Array
+Given an array of numbers from 1 to n, one number is missing. Write a function to find the missing number.
+
+Example:
+
+js
+Copy code
+const arr = [1, 2, 4, 5, 6];
+// Missing number is 3
+Solution:
+
+js
+Copy code
+function findMissingNumber(arr) {
+  const n = arr.length + 1;
+  const expectedSum = (n * (n + 1)) / 2;
+  const actualSum = arr.reduce((acc, num) => acc + num, 0);
+  return expectedSum - actualSum;
+}
+2. Reverse a String Without Using Built-in Methods
+Reverse a string without using JavaScript's built-in .reverse() method or similar methods.
+
+Example:
+
+js
+Copy code
+const str = "hello";
+// Output: "olleh"
+Solution:
+
+js
+Copy code
+function reverseString(str) {
+  let reversed = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+  return reversed;
+}
+3. Check if a String is a Palindrome
+Check if a given string is a palindrome (a word that reads the same backward as forward).
+
+Example:
+
+js
+Copy code
+const str = "madam";
+// Output: true
+Solution:
+
+js
+Copy code
+function isPalindrome(str) {
+  const cleanedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+  const reversedStr = cleanedStr.split('').reverse().join('');
+  return cleanedStr === reversedStr;
+}
+4. Count Occurrences of a Character in a String
+Write a function that counts how many times a character appears in a string.
+
+Example:
+
+js
+Copy code
+const str = "javascript";
+const char = 'a';
+// Output: 2
+Solution:
+
+js
+Copy code
+function countCharacter(str, char) {
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === char) count++;
+  }
+  return count;
+}
+5. Find the Largest and Smallest Numbers in an Array
+Find the largest and smallest numbers in an array of integers.
+
+Example:
+
+js
+Copy code
+const arr = [3, 1, 4, 1, 5, 9, 2, 6];
+// Largest: 9, Smallest: 1
+Solution:
+
+js
+Copy code
+function findMinMax(arr) {
+  let min = Math.min(...arr);
+  let max = Math.max(...arr);
+  return { min, max };
+}
+6. Sum of All Digits in a Number
+Write a function to calculate the sum of all digits in a given number.
+
+Example:
+const num = 12345;
+// Output: 15 (1 + 2 + 3 + 4 + 5)
+Solution:
+
+js
+Copy code
+function sumOfDigits(num) {
+  return num.toString().split('').reduce((sum, digit) => sum + parseInt(digit), 0);
+}
+7. Fibonacci Sequence
+Write a function to return the nth Fibonacci number.
+
+Example:
+
+js
+Copy code
+const n = 6;
+// Output: 8 (Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8)
+Solution:
+
+js
+Copy code
+function fibonacci(n) {
+  if (n <= 1) return n;
+  let a = 0, b = 1;
+  for (let i = 2; i <= n; i++) {
+    const temp = a + b;
+    a = b;
+    b = temp;
+  }
+  return b;
+}
+8. Find the First Non-Repeating Character in a String
+Given a string, return the first non-repeating character. If none exist, return null.
+
+Example:
+
+js
+Copy code
+const str = "swiss";
+// Output: 'w'
+Solution:
+
+js
+Copy code
+function firstNonRepeating(str) {
+  const charCount = {};
+  for (let char of str) {
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+  for (let char of str) {
+    if (charCount[char] === 1) return char;
+  }
+  return null;
+}
+9. Flatten a Nested Array
+Write a function to flatten an array that contains nested arrays.
+
+Example:
+
+js
+Copy code
+const arr = [1, [2, [3, 4], 5], 6];
+// Output: [1, 2, 3, 4, 5, 6]
+Solution:
+
+js
+Copy code
+function flattenArray(arr) {
+  return arr.reduce((acc, val) => acc.concat(Array.isArray(val) ? flattenArray(val) : val), []);
+}
+10. Check for Prime Number
+Write a function that checks if a given number is prime.
+
+Example:
+
+js
+Copy code
+const num = 29;
+// Output: true (29 is prime)
+Solution:
+
+js
+Copy code
+function isPrime(num) {
+  if (num <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}

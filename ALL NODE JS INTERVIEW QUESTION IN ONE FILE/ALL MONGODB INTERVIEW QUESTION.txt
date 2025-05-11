@@ -33,3 +33,225 @@ db.users.createIndex({ email: 1 }, { unique: true })
 db.articles.createIndex({ content: "text" })
 5. Geospatial Index
 db.places.createIndex({ location: "2dsphere" })
+
+
+
+3)  What is MongoDB?
+Answer:
+
+MongoDB is a NoSQL, document-oriented database. Instead of storing data in tables (like relational databases), MongoDB stores data as JSON-like documents (BSON format).
+
+Key Features:
+
+Schema-less
+
+High performance and scalability
+
+Built-in replication and sharding
+
+Stores data in collections and documents
+
+📘 2. What is the difference between SQL and NoSQL (MongoDB)?
+Feature	SQL (MySQL, PostgreSQL)	NoSQL (MongoDB)
+Data Format	Tables & Rows	Documents & Collections
+Schema	Fixed schema	Dynamic schema
+Joins	Yes	Limited, uses embedding
+Scalability	Vertical	Horizontal (sharding)
+Best Use Case	Structured data, complex queries	Unstructured data, scalability
+
+📘 3. What is a document in MongoDB?
+Answer:
+
+A document is a JSON-like object stored in MongoDB. It contains key-value pairs and is the basic unit of data.
+
+Example:
+
+json
+Copy
+Edit
+{
+  "_id": 1,
+  "name": "Alice",
+  "email": "alice@example.com",
+  "skills": ["Node.js", "MongoDB"]
+}
+Each document in a collection can have a different structure (flexible schema).
+
+📘 4. What is a collection in MongoDB?
+Answer:
+
+A collection is a group of MongoDB documents. It is analogous to a table in SQL but without schema enforcement.
+
+You don't need to define collections ahead of time—they're created automatically when you insert the first document.
+
+📘 5. What is BSON?
+Answer:
+
+BSON stands for Binary JSON. It's the format MongoDB uses to store documents internally.
+
+It supports:
+
+Binary data
+
+Additional data types like Date, ObjectId, Decimal128
+
+Example:
+
+json
+Copy
+Edit
+{
+  "_id": ObjectId("507f1f77bcf86cd799439011"),
+  "name": "John"
+}
+📘 6. What is ObjectId in MongoDB?
+Answer:
+
+ObjectId is a 12-byte unique identifier used as the default primary key (_id) for MongoDB documents.
+
+Format:
+
+4 bytes: timestamp
+
+5 bytes: machine + process ID
+
+3 bytes: incrementing counter
+
+📘 7. How do you perform CRUD operations in MongoDB?
+Create
+js
+Copy
+Edit
+db.users.insertOne({ name: "Alice", age: 25 });
+Read
+js
+Copy
+Edit
+db.users.find({ age: { $gt: 20 } });
+Update
+js
+Copy
+Edit
+db.users.updateOne({ name: "Alice" }, { $set: { age: 26 } });
+Delete
+js
+Copy
+Edit
+db.users.deleteOne({ name: "Alice" });
+📘 8. What is indexing in MongoDB?
+Answer:
+
+Indexes speed up query performance by allowing MongoDB to search efficiently.
+
+Default index:
+
+js
+Copy
+Edit
+{ _id: 1 }
+Creating a custom index:
+
+js
+Copy
+Edit
+db.users.createIndex({ email: 1 });
+Types of indexes:
+
+Single field
+
+Compound
+
+Text
+
+Geospatial
+
+Hashed
+
+📘 9. What is aggregation in MongoDB?
+Answer:
+
+Aggregation is a data processing pipeline that transforms documents into computed results.
+
+Example:
+
+js
+Copy
+Edit
+db.orders.aggregate([
+  { $match: { status: "delivered" } },
+  { $group: { _id: "$customer", total: { $sum: "$amount" } } }
+]);
+Used for:
+
+Grouping
+
+Filtering
+
+Calculating sums, averages, etc.
+
+📘 10. What is the difference between find() and aggregate()?
+Feature	find()	aggregate()
+Use	Basic queries	Advanced data transformation
+Performance	Faster for simple queries	Better for complex ops
+Operators	Limited (e.g., $gt, $in)	Full pipeline ($group, $project, $sort, etc.)
+
+📘 11. What is replication in MongoDB?
+Answer:
+
+Replication provides high availability by copying data to multiple servers (replica set).
+
+Primary: Accepts writes
+
+Secondaries: Sync from primary, used for reads or failover
+
+Failover is automatic in case the primary goes down.
+
+📘 12. What is sharding in MongoDB?
+Answer:
+
+Sharding is horizontal partitioning of data across multiple servers.
+
+Use it for:
+
+Handling large datasets
+
+Load balancing
+
+A shard key is used to determine how data is split across shards.
+
+📘 13. How does MongoDB handle transactions?
+Answer:
+
+MongoDB supports multi-document ACID transactions (since v4.0).
+
+js
+Copy
+Edit
+const session = client.startSession();
+session.startTransaction();
+
+try {
+  await users.insertOne({ name: "A" }, { session });
+  await orders.insertOne({ item: "X" }, { session });
+  await session.commitTransaction();
+} catch (error) {
+  await session.abortTransaction();
+}
+📘 14. What is the difference between embedded documents and references?
+Embedded (denormalized)	Referenced (normalized)
+Stores nested documents	Stores _id of related doc
+Faster reads	Less duplication
+Good for one-to-few	Better for one-to-many
+
+Example (embedded):
+
+js
+Copy
+Edit
+{ name: "Alice", address: { city: "NY", zip: "10001" } }
+Example (referenced):
+
+js
+Copy
+Edit
+{ name: "Alice", addressId: ObjectId("...") }
