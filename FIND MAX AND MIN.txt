@@ -1,0 +1,76 @@
+Q find the smmallest even number and largest even number in an array;
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter array size: ";
+    cin >> n;
+    int arr[n]; 
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int maxIndex = -1; // Initialize maxIndex with -1
+    for(int i = 0; i < n; i++) {
+        if(arr[i] % 2 == 0) { // Check if element is even
+            if(maxIndex == -1 || arr[i] > arr[maxIndex]) { // Compare with arr[maxIndex]
+                maxIndex = i;
+            }
+        }
+    }
+
+    int minIndex = -1; // Initialize minIndex with -1
+    for(int i = 0; i < n; i++) {
+        if(arr[i] % 2 == 0) { // Check if element is even
+            if(minIndex == -1 || arr[i] < arr[minIndex]) { // Compare with arr[minIndex]
+                minIndex = i;
+            }
+        }
+    }
+
+        cout << "Index of maximum even element: " << maxIndex << endl;
+        cout << "Index of minimum even element: " << minIndex << endl;
+  
+
+    return 0;
+}
+
+
+for max----
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int arr[]={5,6,8,10};
+    int max=-1;
+    for(int i: arr){
+        if(arr[max]<arr[i] && arr[i]%2==0){
+            max=i;
+    }
+}
+cout<<max;
+
+    return 0;
+}
+
+for min----
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int arr[]={5,6,8,10};
+    //int n=arr.size();
+    int min=-1;
+    for(int i: arr){
+        if(arr[min]>=arr[i] && arr[i]%2==0){
+            min=i;
+    }
+}
+cout<<min;
+return 0;
+}

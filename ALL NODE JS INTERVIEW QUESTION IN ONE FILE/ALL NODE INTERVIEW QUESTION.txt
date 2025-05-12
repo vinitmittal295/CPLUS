@@ -69,7 +69,9 @@ It reads the body of a request (e.g., POST, PUT) and converts it into a JavaScri
 
 
  1. What is Node.js?
-Answer: Node.js is a JavaScript runtime built on Chrome's V8 engine. It allows for the execution of JavaScript code outside of the browser, making it ideal for server-side development. It uses a non-blocking, event-driven I/O model, which makes it lightweight and efficient for building scalable network applications.
+Answer: Node.js is a JavaScript runtime built on Chrome's V8 engine. It allows for the execution of JavaScript code outside of the 
+browser, making it ideal for server-side development. It uses a non-blocking, event-driven I/O model, which makes it lightweight and
+ efficient for building scalable network applications.
 
 2. What is the difference between require and import in Node.js?
 Answer:
@@ -96,7 +98,8 @@ setImmediate(): Executes the callback after the current event loop cycle, allowi
 setTimeout(): Executes a callback after a specified delay (in milliseconds), scheduling it in the timer phase of the event loop.
 
 6. What is the use of the global object in Node.js?
-Answer: The global object in Node.js provides a way to access global variables or functions. It is equivalent to the window object in browsers. For example, global.setTimeout() works the same way as setTimeout().
+Answer: The global object in Node.js provides a way to access global variables or functions. It is equivalent to the window object 
+in browsers. For example, global.setTimeout() works the same way as setTimeout().
 
 7. Explain the difference between == and === in JavaScript.
 Answer:

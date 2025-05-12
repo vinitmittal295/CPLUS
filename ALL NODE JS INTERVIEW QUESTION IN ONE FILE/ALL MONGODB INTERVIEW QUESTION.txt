@@ -39,7 +39,8 @@ db.places.createIndex({ location: "2dsphere" })
 3)  What is MongoDB?
 Answer:
 
-MongoDB is a NoSQL, document-oriented database. Instead of storing data in tables (like relational databases), MongoDB stores data as JSON-like documents (BSON format).
+MongoDB is a NoSQL, document-oriented database. Instead of storing data in tables (like relational databases), MongoDB stores data 
+as JSON-like documents (BSON format).
 
 Key Features:
 
@@ -65,10 +66,6 @@ Answer:
 A document is a JSON-like object stored in MongoDB. It contains key-value pairs and is the basic unit of data.
 
 Example:
-
-json
-Copy
-Edit
 {
   "_id": 1,
   "name": "Alice",
@@ -96,10 +93,6 @@ Binary data
 Additional data types like Date, ObjectId, Decimal128
 
 Example:
-
-json
-Copy
-Edit
 {
   "_id": ObjectId("507f1f77bcf86cd799439011"),
   "name": "John"
@@ -119,41 +112,28 @@ Format:
 
 📘 7. How do you perform CRUD operations in MongoDB?
 Create
-js
-Copy
-Edit
 db.users.insertOne({ name: "Alice", age: 25 });
+
 Read
-js
-Copy
-Edit
 db.users.find({ age: { $gt: 20 } });
+
 Update
-js
-Copy
-Edit
 db.users.updateOne({ name: "Alice" }, { $set: { age: 26 } });
+
 Delete
-js
-Copy
-Edit
 db.users.deleteOne({ name: "Alice" });
+
 📘 8. What is indexing in MongoDB?
+
 Answer:
 
 Indexes speed up query performance by allowing MongoDB to search efficiently.
 
 Default index:
 
-js
-Copy
-Edit
 { _id: 1 }
 Creating a custom index:
 
-js
-Copy
-Edit
 db.users.createIndex({ email: 1 });
 Types of indexes:
 
@@ -174,9 +154,7 @@ Aggregation is a data processing pipeline that transforms documents into compute
 
 Example:
 
-js
-Copy
-Edit
+
 db.orders.aggregate([
   { $match: { status: "delivered" } },
   { $group: { _id: "$customer", total: { $sum: "$amount" } } }
