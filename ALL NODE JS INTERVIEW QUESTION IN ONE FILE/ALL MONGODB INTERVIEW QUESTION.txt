@@ -13,12 +13,12 @@ Support sorting efficiently.
 
 
 Types of Indexes in MongoDB
-Index Type	Description
-Single Field Index	Index on one field. Most basic type.
-Compound Index	Index on multiple fields (order matters).
-Multikey Index	Index on arrays — indexes each element of the array.
-Text Index	Supports full-text search on string content.
-Geospatial Index	For location-based (2D/2dsphere) queries.
+Index Type	                    Description
+Single Field Index	            Index on one field. Most basic type.
+Compound Index	                    Index on multiple fields (order matters).
+Multikey Index	                    Index on arrays — indexes each element of the array.
+Text Index	                     Supports full-text search on string content.
+Geospatial Index	             For location-based (2D/2dsphere) queries.
 Hashed Index	Supports sharding with hashed keys.
 Wildcard Index	Indexes all fields or dynamic field paths.
 
@@ -202,9 +202,6 @@ Answer:
 
 MongoDB supports multi-document ACID transactions (since v4.0).
 
-js
-Copy
-Edit
 const session = client.startSession();
 session.startTransaction();
 
@@ -223,13 +220,7 @@ Good for one-to-few	Better for one-to-many
 
 Example (embedded):
 
-js
-Copy
-Edit
+
 { name: "Alice", address: { city: "NY", zip: "10001" } }
 Example (referenced):
-
-js
-Copy
-Edit
 { name: "Alice", addressId: ObjectId("...") }

@@ -1,6 +1,7 @@
 1)WHAT IS BUFFER
 
-In Node.js, a Buffer is a built-in global object used to handle binary data directly in memory. Buffers are especially useful when dealing with data from file systems, network protocols, or streams where raw binary access is needed.
+In Node.js, a Buffer is a built-in global object used to handle binary data directly in memory. Buffers are especially useful when
+ dealing with data from file systems, network protocols, or streams where raw binary access is needed.
 
 When and Why to Use Buffers
 Reading or writing binary files (e.g., images, videos).
@@ -9,7 +10,7 @@ Working with TCP streams or other low-level data streams.
 
 Manipulating raw data (e.g., from a network protocol like HTTP or FTP).
 
-ommon Buffer Methods
+common Buffer Methods
 Method	Description
 Buffer.from()	Creates a buffer from a string, array, or another buffer
 Buffer.alloc(size)	Creates a zero-filled buffer

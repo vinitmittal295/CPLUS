@@ -9,7 +9,8 @@ Rate-limiting API calls
 
 DEBOUNCING
 
-Debounce ensures that a function is only executed after a certain delay, and only if the event hasn't been triggered again in that delay.
+Debounce ensures that a function is only executed after a certain delay, and only if the event hasn't been triggered again in that 
+delay.
 
 ✅ Use Case:
 Search input auto-suggestions
@@ -48,9 +49,6 @@ Answer:
 
 === (strict equality): compares values and types without conversion.
 
-js
-Copy
-Edit
 0 == '0'     // true
 0 === '0'    // false
 Use === to avoid unexpected behavior due to type coercion.
@@ -135,9 +133,6 @@ Answer:
 
 A Promise is an object representing the future result of an asynchronous operation.
 
-js
-Copy
-Edit
 const promise = new Promise((resolve, reject) => {
   setTimeout(() => resolve('Done!'), 1000);
 });
@@ -192,22 +187,16 @@ bind	Returns a new function with bound this
 ✅ 10. What is the difference between synchronous and asynchronous code?
 Synchronous Code	Asynchronous Code
 Executes line-by-line	Executes with possible delays
-Blocking	Non-blocking
-Slower with heavy tasks	Efficient for I/O or network
+Blocking	         Non-blocking
+Slower with heavy tasks	  Efficient for I/O or network
 
 Example of async:
 
-js
-Copy
-Edit
 setTimeout(() => {
   console.log('This runs later');
 }, 1000);
 console.log('This runs first');
 Would you like this in a downloadable PDF or a section focused on advanced JS (e.g., prototypal inheritance, modules, or event delegation)?
-
-
-
 
 
 

@@ -1,0 +1,25 @@
+Can We Call a Variable?
+✅ You can call a variable if it stores a function.
+
+const greet = function() {
+  console.log("Hello!");
+};
+
+greet(); // ✅ This is calling the function stored in the variable
+
+
+
+ You cannot call a variable that stores a non-function value.
+
+let age = 25;
+
+age(); // ❌ TypeError: age is not a function
+
+
+
+When a Variable Can Be Called
+Variable Stores	Can You Call It?	Example
+
+A function	✅ Yes	sayHi()
+A number or string	❌ No (error)	42() or "hi"()
+An object with a function property	✅ With dot notation	obj.sayHi()

@@ -1,0 +1,22 @@
+12. Create a for loop to print the Fibonacci series up to 10 terms.
+#include<bits/stdc++.h>
+using namespace std;
+int fibb(int n1,int n2,int n3,int num){
+    for(int i=1; i<=num; i++){
+        n3=n1+n2;
+        cout<<n3;
+        n1=n2;
+        n2=n3;
+    }
+    return n3;
+}
+int main(){
+    int num;
+    cout<<"enter the number which you want to fibbnacci";
+    cin>>num;
+    int n1=0;
+    int n2=1;
+    int n3;
+    fibb(n1,n2,n3,num);
+    
+}
